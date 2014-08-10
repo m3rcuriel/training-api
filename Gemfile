@@ -20,7 +20,6 @@ gem 'pg', '~>0.17.1'
 # dev
 group :development do
   gem 'pry', '~>0.9.12.6'
-  gem 'sqlite3', '~>1.3.9'
 end
 
 source 'https://rubygems.org'

@@ -1,4 +1,4 @@
 tmp
 db
 .bundle
-aws
+aws/*.pem
