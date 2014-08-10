@@ -11,8 +11,6 @@ gem 'konfiguration'
 gem 'rubyflake'
 
 # misc
-gem 'redcarpet'
-gem 'pygments.rb'
 gem 'dalli'
 gem 'mail'
 gem 'curb'
