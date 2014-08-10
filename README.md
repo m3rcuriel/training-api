@@ -37,6 +37,6 @@ HTTPie lets you easily test APIs from the command line. `sudo pip install httpie
 
 # Licensing and credits
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial 3.0 License](http://creativecommons.org/licenses/by-nc/3.0/us/).
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 License](http://creativecommons.org/licenses/by-nc/4.0/).
 
 Credits to [Kenneth Balleneger](https://github.com/kballenegger/) and [Brandon Goldman](https://github.com/bgoldman) for their development upon the [Kenji](https://github.com/kballenegger/kenji) framework.
