@@ -1,1 +1,1 @@
-gem install sequel pg
+sequel -m ~/app-root/repo/migrations postgres://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT
