@@ -3,7 +3,7 @@ require 'konfiguration'
 require 'rubyflake'
 
 if ENV['SUDO_USER'] == 'ec2-user'
-  DB = Sequel.connect('postgres://logan:Dj3AsZqAxG%h9?@aag9w68z5p862l.cehf3tpvjpkp.us-west-1.rds.amazonaws.com:5432')
+  DB = Sequel.connect('postgres://logan:Dj3AsZqAxG3h9x@training.cui9ng4dny4l.us-west-2.rds.amazonaws.com:5432/training')
 else
   DB = Sequel.connect(Konfiguration.database(:uri))
 end
