@@ -1,1 +1,1 @@
-uri: postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT
+uri: postgresql://adminigbukyr:lbaGd4J2fBvE@127.11.79.130:5432

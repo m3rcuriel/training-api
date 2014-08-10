@@ -2,7 +2,11 @@ require 'sequel'
 require 'konfiguration'
 require 'rubyflake'
 
-DB = Sequel.connect(Konfiguration.database(:uri))
+if ENV['OPENSHIFT_POSTGRESQL_DB_URL']
+  DB = Sequel.connect(ENV['OPENSHIFT_POSTGRESQL_DB_URL'])
+else
+  DB = Sequel.connect(Konfiguration.database(:uri))
+end
 
 module Models
 
