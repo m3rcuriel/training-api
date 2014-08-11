@@ -70,6 +70,18 @@ module Firebots
 
         badge = Models::Badges[id: input[:id]]
 
+        all_users = Models::Users.all
+        all_users.each do |user|
+          Models::UserBadges.insert({
+            user_id: user[:id],
+            badge_id: badge[:id],
+            status: 'no',
+            id: Rubyflake.generate,
+            time_created: Time.now,
+            time_updated: Time.now,
+          })
+        end
+
         {
           status: 200,
           badge: sanitized_badge(badge)
