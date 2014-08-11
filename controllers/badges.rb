@@ -69,7 +69,7 @@ module Firebots
 
       def sanitized_badge(badge)
         Hash[badge.select do |k,_|
-          [:id, :time_created, :time_updated, :name, :description].include?(k)
+          [:id, :time_created, :time_updated, :name, :description, :learning_method, :assessment].include?(k)
         end.map(&Helpers::HashPairSanitizer)]
       end
     end
