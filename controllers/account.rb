@@ -36,6 +36,18 @@ module Firebots::InternalAPI::Controllers
 
       Firebots::Password.new(user).save_password!(password)
 
+      all_badges = Models::Badges.all
+      all_badges.each do |badge|
+        Models::UserBadges.insert({
+          user_id: user[:id],
+          badge_id: badge[:id],
+          status: 'no',
+          id: Rubyflake.generate,
+          time_created: Time.now,
+          time_updated: Time.now,
+        })
+      end
+
       {
         status: 200,
         user: sanitized_user(user),

@@ -12,5 +12,6 @@ module Models
 
   Users = DB[:users]
   Badges = DB[:badges]
+  UserBadges = DB[:users_badges]
 
 end
