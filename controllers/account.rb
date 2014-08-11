@@ -109,7 +109,7 @@ module Firebots::InternalAPI::Controllers
 
     def sanitized_user(user)
       Hash[user.select do |k,_|
-        [:id, :first_name, :last_name, :email, :permissions, :time_created, :time_updated].include?(k)
+        [:id, :first_name, :last_name, :username, :email, :permissions, :time_created, :time_updated].include?(k)
       end.map(&Helpers::HashPairSanitizer)]
     end
   end

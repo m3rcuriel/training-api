@@ -18,4 +18,4 @@ gem install bundler
 rvm install ruby-2.1.1
 bundle install
 sequel -m migrations postgres://logan:Dj3AsZqAxG3h9x@training.cui9ng4dny4l.us-west-2.rds.amazonaws.com:5432/training
-bundle exec thin -R config.ru -p 80 start
+bundle exec thin -R config.ru -p 80 start &
