@@ -19,6 +19,9 @@ module Firebots::InternalAPI::Controllers
         validates 'email',
           with: -> { Models::Users[email: self].nil? },
           reason: 'must be unique.'
+        validates 'username',
+          with: -> { Models::Users[username: self].nil? },
+          reason: 'must be unique.'
 
         allow_keys :valid
       end
@@ -62,6 +65,18 @@ module Firebots::InternalAPI::Controllers
       {
         status: 200,
         user: sanitized_user(user),
+      }
+    end
+
+    # Returns a list of all users.
+    # TODO: require permissions to be either lead or mentor
+    #
+    get '/all' do
+      all = Models::Users.all
+
+      {
+        status: 200,
+        users: all.map {|u| sanitized_user(u)},
       }
     end
 

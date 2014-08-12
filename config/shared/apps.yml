@@ -1,0 +1,6 @@
+# This is a temporary config file used for now in order to support the concept
+# of apps as API consumers. Should be replaced by a database at some point.
+
+firebots-web:
+    id: firebots-web
+    secret: sjdhf297aaslwur292ASFnsldFJSasdqo26xmDas

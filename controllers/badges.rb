@@ -10,14 +10,14 @@ module Firebots
 
         badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
 
-        earned = badge_relations.select do |relation|
-          relation[:status] == 'earned'
+        yes = badge_relations.select do |relation|
+          relation[:status] == 'yes'
         end.each do |relation|
           relation[:badge_id]
         end
 
-        earning = badge_relations.select do |relation|
-          relation[:status] == 'earning'
+        review = badge_relations.select do |relation|
+          relation[:status] == 'review'
         end.each do |relation|
           relation[:badge_id]
         end
@@ -30,8 +30,8 @@ module Firebots
 
         {
           status: 200,
-          earned: earned.map {|b| sanitized_badge(b) },
-          earning: earning.map {|b| sanitized_badge(b) },
+          yes: yes.map {|b| sanitized_badge(b) },
+          review: review.map {|b| sanitized_badge(b) },
           no: no.map {|b| sanitized_badge(b) },
         }
       end
@@ -125,62 +125,7 @@ module Firebots
         }
       end
 
-      route :patch, '/user' do
-        user = requires_authentication!
-        unless user[:permissions] == 'mentor'
-          kenji.respond(403, "You are not allowed to change user badges.")
-        end
-
-        input = kenji.validated_input do
-          validates_array 'delta' do
-            validates_child_hash 'self' do
-              validates_type_of 'status', is: String
-              validates_type_of 'id', is: Bignum
-            end
-          end
-        end
-
-        input[:delta].each do |badge|
-          Models::UserBadges.where(id: badge[:id]).update(badge.merge(
-            time_updated: Time.now,
-            reviewer_id: user[:id]
-          ))
-        end
-
-        {
-          status: 200,
-          message: 'User badge data updated.',
-        }
-      end
-
-      get '/user/:id' do |id|
-        badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
-
-        earned = badge_relations.select do |relation|
-          relation[:status] == 'earned'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        earning = badge_relations.select do |relation|
-          relation[:status] == 'earning'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        no = badge_relations.select do |relation|
-          relation[:status] == 'no'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        {
-          status: 200,
-          earned: earned.map {|b| sanitized_badge(b) },
-          earning: earning.map {|b| sanitized_badge(b) },
-          no: no.map {|b| sanitized_badge(b) },
-        }
-      end
+      pass '/user', UserBadges
 
       # -- Helper methods
       private
