@@ -18,6 +18,9 @@ DB.transaction do
     email: 'demo@example.com',
     permissions: 'student',
     username: 'test',
+    title: 'important title',
+    technical_group: 'mechanical',
+    nontechnical_group: 'pr',
   }
   Models::Users.insert(test_user)
   Firebots::Password.new(test_user).save_password!('to the moon')
