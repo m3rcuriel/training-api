@@ -31,6 +31,33 @@ module Firebots
         }
       end
 
+      # Lists the user's badges.
+      #
+      get '/' do
+        user = requires_authentication!
+
+        badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
+
+        yes = badge_relations.select do |relation|
+          relation[:status] == 'yes'
+        end
+
+        review = badge_relations.select do |relation|
+          relation[:status] == 'review'
+        end
+
+        no = badge_relations.select do |relation|
+          relation[:status] == 'no'
+        end
+
+        {
+          status: 200,
+          yes: yes.map {|r| sanitized_badge_relation(r) },
+          review: review.map {|r| sanitized_badge_relation(r) },
+          no: no.map {|r| sanitized_badge_relation(r) },
+        }
+      end
+
       get '/:id' do |id|
         badge_relations = Models::UserBadges.where(user_id: id).to_a
 
@@ -68,6 +95,12 @@ module Firebots
 
       def sanitized_badge(badge)
         sanitizer.send(:sanitized_badge, badge)
+      end
+
+      def sanitized_badge_relation(relation)
+        Hash[relation.select do |k,_|
+          [:id, :time_created, :time_updated, :user_id, :badge_id, :status, :reviewer_id].include?(k)
+        end.map(&Helpers::HashPairSanitizer)]
       end
 
     end

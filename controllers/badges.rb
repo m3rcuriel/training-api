@@ -3,39 +3,6 @@ module Firebots
 
     class Badges < Kenji::Controller
 
-      # Lists the user's badges.
-      #
-      get '/' do
-        user = requires_authentication!
-
-        badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
-
-        yes = badge_relations.select do |relation|
-          relation[:status] == 'yes'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        review = badge_relations.select do |relation|
-          relation[:status] == 'review'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        no = badge_relations.select do |relation|
-          relation[:status] == 'no'
-        end.each do |relation|
-          relation[:badge_id]
-        end
-
-        {
-          status: 200,
-          yes: yes.map {|b| sanitized_badge(b) },
-          review: review.map {|b| sanitized_badge(b) },
-          no: no.map {|b| sanitized_badge(b) },
-        }
-      end
-
       # Returns a specified badge.
       #
       get '/:id' do |id|
@@ -57,8 +24,9 @@ module Firebots
         end
 
         input = kenji.validated_input do
-          validates_type_of 'name', 'description',
+          validates_type_of 'name', 'description', 'category', 'subcategory',
             'learning_method', 'assessment', is: String
+          validates_type_of 'level', is: Integer, when: :is_set
         end
 
         input[:id] = Rubyflake.generate
@@ -108,8 +76,9 @@ module Firebots
         end
 
         input = kenji.validated_input do
-          validates_type_of 'name', 'description',
+          validates_type_of 'name', 'description', 'category', 'subcategory',
             'learning_method', 'assessment', is: String, when: :is_set
+          validates_type_of 'level', is: Integer, when: :is_set
         end
 
         badge = Models::Badges[id: id.to_i]
@@ -132,7 +101,7 @@ module Firebots
 
       def sanitized_badge(badge)
         Hash[badge.select do |k,_|
-          [:id, :time_created, :time_updated, :name, :description, :learning_method, :assessment].include?(k)
+          [:id, :time_created, :time_updated, :name, :description, :learning_method, :assessment, :category, :subcategory, :level].include?(k)
         end.map(&Helpers::HashPairSanitizer)]
       end
     end
