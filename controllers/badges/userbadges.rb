@@ -38,23 +38,9 @@ module Firebots
 
         badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
 
-        yes = badge_relations.select do |relation|
-          relation[:status] == 'yes'
-        end
-
-        review = badge_relations.select do |relation|
-          relation[:status] == 'review'
-        end
-
-        no = badge_relations.select do |relation|
-          relation[:status] == 'no'
-        end
-
         {
           status: 200,
-          yes: yes.map {|r| sanitized_badge_relation(r) },
-          review: review.map {|r| sanitized_badge_relation(r) },
-          no: no.map {|r| sanitized_badge_relation(r) },
+          badge_relations: badge_relations.map {|r| sanitized_badge_relation(r) },
         }
       end
 
