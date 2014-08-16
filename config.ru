@@ -8,7 +8,7 @@ require 'kenji'
 
 # use Rack::ShowExceptions
 
-if ENV['PWD'].to_s.eql?('/home/ec2-user')
+if ENV['AWS_RDS_HOME'].to_s.eql?('/opt/aws/apitools/rds')
   puts 'forcing ssl'
   use Rack::SSL
 end
