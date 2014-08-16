@@ -3,6 +3,7 @@ gem 'rack', '~>1.5.2'
 gem 'kenji', '~>1.1.2'
 gem 'thin', '~>1.5.1'
 gem 'rack-cors', '~>0.2.9'
+gem 'rack-ssl', '~>1.4.1'
 
 # database
 gem 'sequel', '~>4.10.0'
