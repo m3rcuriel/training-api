@@ -21,8 +21,6 @@ GEM
       websocket (~> 1.0)
     rack (1.5.2)
     rack-cors (0.2.9)
-    rack-ssl (1.4.1)
-      rack
     rubyflake (0.1.0)
     sequel (4.10.0)
     slop (3.5.0)
@@ -45,7 +43,6 @@ DEPENDENCIES
   pusher-client (~> 0.6.0)
   rack (~> 1.5.2)
   rack-cors (~> 0.2.9)
-  rack-ssl (~> 1.4.1)
   rubyflake (~> 0.1.0)
   sequel (~> 4.10.0)
   thin (~> 1.5.1)
