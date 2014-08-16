@@ -9,6 +9,7 @@ module Firebots::InternalAPI::Controllers
       input = kenji.validated_input do
 
         validates_type_of 'first_name', 'last_name', 'password', 'username',
+        'permissions', 'technical_group', 'nontechnical_group', 'title',
           is: String
 
         validates_regex 'email', matches: /^.+@.+\..+$/
@@ -90,6 +91,7 @@ module Firebots::InternalAPI::Controllers
       input = kenji.validated_input do
 
         validates_type_of 'first_name', 'last_name', 'password',
+          'permissions', 'technical_group', 'nontechnical_group', 'title'
           is: String, when: :is_set
 
         validates_regex 'email', matches: /^.+@.+\..+$/, when: :is_set
