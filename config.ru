@@ -3,9 +3,15 @@ require 'rubygems'
 require 'bundler/setup'
 require 'rack'
 require 'rack/cors'
+require 'rack/ssl'
 require 'kenji'
 
 # use Rack::ShowExceptions
+
+if ENV['PWD'].to_s.eql?('/home/ec2-user')
+  puts 'forcing ssl'
+  use Rack::SSL
+end
 
 use Rack::Cors do
   allow do
