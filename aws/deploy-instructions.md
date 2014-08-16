@@ -18,4 +18,36 @@ gem install bundler
 rvm install ruby-2.1.1
 bundle install
 sequel -m migrations postgres://logan:Dj3AsZqAxG3h9x@training.cui9ng4dny4l.us-west-2.rds.amazonaws.com:5432/training
-bundle exec thin -R config.ru -p 80 start&
+thin -R config.ru -p 7000 -s 3 start
+sudo yum install nginx
+^ starts thin with 3 workers at 7000, 7001, 7002
+sudo nano /etc/nginx/nginx.conf:
+```
+    upstream thin {
+        server 127.0.0.1:7000;
+        server 127.0.0.1:7001;
+        server 127.0.0.1:7002;
+    }
+
+    server {
+        ...
+        server_name api.oflogan.com;
+
+        location / {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+            proxy_next_upstream error;
+
+            if ($http_x_forwarded_proto != "https") {
+                return 301 https://$host$request_uri;
+            }
+
+            proxy_pass http://thin;
+        }
+    }
+```
+
+sudo /usr/sbin/nginx -t
+sudo /usr/sbin/nginx -s reload
