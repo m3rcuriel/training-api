@@ -1,3 +1,5 @@
+require 'aws-sdk'
+
 module Firebots
   module InternalAPI::Controllers
 
@@ -92,6 +94,16 @@ module Firebots
           status: 200,
           message: 'Badge info changed.',
         }
+      end
+
+      get '/s3-creds' do
+        s3 = AWS::S3.new
+        bucket = s3.buckets['3501-training-2014-us-west-2']
+
+        post = AWS::S3::PresignedPost.new(bucket)
+        post.fields.select do |key, value|
+          key == 'policy' || key == 'signature'
+        end
       end
 
       pass '/user', UserBadges

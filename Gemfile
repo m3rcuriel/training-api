@@ -13,6 +13,7 @@ gem 'rubyflake', '~>0.1.0'
 # misc
 gem 'dalli', '~>2.7.2'
 gem 'pusher-client', '~>0.6.0'
+gem 'aws-sdk', '~>1.51.0'
 
 # production
 gem 'pg', '~>0.17.1'
