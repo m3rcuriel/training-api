@@ -17,7 +17,7 @@ gem install bundler
 rvm install ruby-2.1.1
 bundle install
 sequel -m migrations postgres://logan:Dj3AsZqAxG3h9x@training.cui9ng4dny4l.us-west-2.rds.amazonaws.com:5432/training
-thin -R config.ru -p 7000 -s 3 start &
+thin -R config.ru -p 7000 -s 3 start
 sudo yum install nginx
 sudo nano /etc/nginx/nginx.conf # see below for what to put in
 ```
