@@ -70,9 +70,10 @@ module Firebots::InternalAPI::Controllers
     end
 
     # Returns a list of all users.
-    # TODO: require permissions to be either lead or mentor
     #
     get '/all' do
+      user = requires_authentication!
+
       all = Models::Users.all
 
       {
