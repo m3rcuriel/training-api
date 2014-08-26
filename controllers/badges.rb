@@ -109,6 +109,13 @@ module Firebots
         post.fields
       end
 
+      get '/categories' do
+        categories = Models::Badges.select_map(:category)
+        categories = Set.new(categories)
+
+        categories.to_a
+      end
+
       pass '/user', UserBadges
 
       # -- Helper methods
