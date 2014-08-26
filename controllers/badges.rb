@@ -97,10 +97,15 @@ module Firebots
       end
 
       get '/s3-creds' do
+        user = requires_authentication!
+        unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
+          kenji.respond(403, "You don't have permissions to get S3 creds.")
+        end
+
         s3 = AWS::S3.new
         bucket = s3.buckets['3501-training-2014-us-west-2']
-
         post = AWS::S3::PresignedPost.new(bucket)
+
         post.fields.select do |key, value|
           key == 'policy' || key == 'signature'
         end
