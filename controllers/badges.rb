@@ -27,7 +27,8 @@ module Firebots
 
         input = kenji.validated_input do
           validates_type_of 'name', 'description', 'category', 'subcategory',
-            'learning_method', 'assessment', is: String
+            'learning_method', is: String
+          validates_type_of 'assessment', is: String, when: :is_set
           validates_type_of 'level', is: Integer, when: :is_set
         end
 
