@@ -10,30 +10,28 @@ module Firebots
         end
 
         input = kenji.validated_input do
-          validates_array 'delta' do
-            validates_child_hash 'self' do
-              validates_type_of 'status', is: String
-              validates_type_of 'id', is: Bignum
-            end
-          end
+          validates_type_of 'status', is: String, when: :is_set
+          validates_type_of 'badge_id', 'user_id', is: String
         end
 
-        if input[:status] == 'yes'
-          unless user[:permissions] == 'mentor'
-            kenji.respond(403, 'You are only allowed to set task to review.')
-          end
+        unless input[:status]
+          input[:status] = 'yes' if user[:permissions] == 'mentor'
+          input[:status] = 'review' if user[:permissions] == 'lead'
         end
 
-        input[:delta].each do |badge|
-          Models::UserBadges.where(id: badge[:id]).update(badge.merge(
+        badge_id = input['badge_id']
+        user_id = input['user_id']
+
+        Models::UserBadges.where(badge_id: badge_id, user_id: user_id).update(
+          input.merge(
             time_updated: Time.now,
-            reviewer_id: user[:id]
-          ))
-        end
+            reviewer_id: user[:id],
+          )
+        )
 
         {
           status: 200,
-          message: 'User badge data updated.',
+          message: 'User linked with badge.',
         }
       end
 
