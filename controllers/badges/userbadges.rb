@@ -53,29 +53,9 @@ module Firebots
       get '/:id' do |id|
         badge_relations = Models::UserBadges.where(user_id: id).to_a
 
-        earned = badge_relations.select do |relation|
-          relation[:status] == 'earned'
-        end.map do |relation|
-          relation[:badge_id]
-        end
-
-        earning = badge_relations.select do |relation|
-          relation[:status] == 'earning'
-        end.map do |relation|
-          relation[:badge_id]
-        end
-
-        no = badge_relations.select do |relation|
-          relation[:status] == 'no'
-        end.map do |relation|
-          relation[:badge_id]
-        end
-
         {
           status: 200,
-          earned: earned,
-          earning: earning,
-          no: no,
+          badge_relations: badge_relations.map {|r| sanitized_badge_relation(r) },
         }
       end
 
