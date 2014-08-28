@@ -5,6 +5,10 @@ module Firebots::InternalAPI::Controllers
     # Creates a user. (aka Registration)
     #
     post '/' do
+      user = requires_authentication!
+      unless user[:permissions] == 'lead' || user[:permissions] == 'mentor'
+        kenji.respond(403, 'Only leads/mentors can add users.')
+      end
 
       input = kenji.validated_input do
 
@@ -62,6 +66,18 @@ module Firebots::InternalAPI::Controllers
     #
     get '/' do
       user = requires_authentication!
+
+      {
+        status: 200,
+        user: sanitized_user(user),
+      }
+    end
+
+    get '/:id' do |id|
+      user = requires_authentication!
+
+      user = Models::Users[id: id.to_i]
+      kenji.respond(404, 'No such user.') unless user
 
       {
         status: 200,
