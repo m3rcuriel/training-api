@@ -13,8 +13,8 @@ module Firebots::InternalAPI::Controllers
       input = kenji.validated_input do
 
         validates_type_of 'first_name', 'last_name', 'password', 'username',
-        'technical_group', 'nontechnical_group', 'title',
-          is: String
+          'technical_group', 'nontechnical_group', is: String
+        validates_type_of 'title', is: String, when: :is_set
 
         validates_regex 'email', matches: /^.+@.+\..+$/
 
