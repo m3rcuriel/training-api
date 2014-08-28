@@ -5,7 +5,7 @@ module Firebots
 
       route :patch, '/' do
         user = requires_authentication!
-        unless user[:permissions] == 'mentor'
+        unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
           kenji.respond(403, "You are not allowed to change user badges.")
         end
 
@@ -15,6 +15,12 @@ module Firebots
               validates_type_of 'status', is: String
               validates_type_of 'id', is: Bignum
             end
+          end
+        end
+
+        if input[:status] == 'yes'
+          unless user[:permissions] == 'mentor'
+            kenji.respond(403, 'You are only allowed to set task to review.')
           end
         end
 
