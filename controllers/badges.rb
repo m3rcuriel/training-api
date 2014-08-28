@@ -27,7 +27,7 @@ module Firebots
 
         input = kenji.validated_input do
           validates_type_of 'name', 'description', 'category', 'subcategory',
-            'learning_method', is: String
+            'learning_method', 'resources', is: String
           validates_type_of 'assessment', is: String, when: :is_set
           validates_type_of 'level', is: Integer, when: :is_set
         end
@@ -80,7 +80,7 @@ module Firebots
 
         input = kenji.validated_input do
           validates_type_of 'name', 'description', 'category', 'subcategory',
-            'learning_method', 'assessment', is: String, when: :is_set
+            'learning_method', 'assessment', 'resources', is: String, when: :is_set
           validates_type_of 'level', is: Integer, when: :is_set
         end
 
@@ -124,7 +124,9 @@ module Firebots
 
       def sanitized_badge(badge)
         Hash[badge.select do |k,_|
-          [:id, :time_created, :time_updated, :name, :description, :learning_method, :assessment, :category, :subcategory, :level].include?(k)
+          [:id, :time_created, :time_updated, :name, :description,
+            :learning_method, :assessment, :category, :subcategory, :level,
+            :resources].include?(k)
         end.map(&Helpers::HashPairSanitizer)]
       end
     end
