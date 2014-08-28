@@ -1,10 +1,4 @@
 # Get started
-To get dependencies, type `bundle install`.
-
-Run the server using `bundle exec thin -R config.ru -p 9977 start`.
-
-Run the migrations with `sequel -m migrations postgres://localhost:5432/training`. Create a new migration with `touch migrations/$(date +%s)_name_of_migration.rb`.
-
 
 To install postgres, `brew install postgres` (OS X). Set up a db in the app root directory:
 ```bash
@@ -13,12 +7,12 @@ initdb db/pg
 createdb training
 ```
 
-Run with:
+Run in one window with:
 ```bash
 postgres -D db/pg
 ```
 
-Run memcached too (should be preinstalled on OS X):
+Run memcached too (in another window) (should be preinstalled on OS X):
 ```bash
 memcached
 ```
@@ -27,6 +21,12 @@ Install `pygments`:
 ```
 sudo pip install pygments
 ```
+
+To get dependencies, type `bundle install`.
+
+Run the server using `bundle exec thin -R config.ru -p 9977 start`. Navigate to `localhost:9977` to see a 404 not found json hash.
+
+Run the migrations with `sequel -m migrations postgres://localhost:5432/training`. Create a new migration with `touch migrations/$(date +%s)_name_of_migration.rb`.
 
 # Useful tools:
 #### `pry`
