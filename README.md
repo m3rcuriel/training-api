@@ -18,15 +18,18 @@ memcached
 ```
 
 Install `pygments`:
-```
+```bash
 sudo pip install pygments
 ```
 
-To get dependencies, type `bundle install`.
+```bash
+bundle install # get dependencies
+sequel -m migrations postgres://localhost:5432/training # run migrations
+bundle exec thin -R config.ru -p 9977 start # start the server on port 9977
+# navigate to `http://localhost:9977` to see a 404 not found json hash.
+```
 
-Run the server using `bundle exec thin -R config.ru -p 9977 start`. Navigate to `localhost:9977` to see a 404 not found json hash.
-
-Run the migrations with `sequel -m migrations postgres://localhost:5432/training`. Create a new migration with `touch migrations/$(date +%s)_name_of_migration.rb`.
+Whenever you create a new migration, use: `touch migrations/$(date +%s)_name_of_migration.rb`.
 
 # Useful tools:
 #### `pry`
