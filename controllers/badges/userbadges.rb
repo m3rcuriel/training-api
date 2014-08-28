@@ -19,6 +19,10 @@ module Firebots
           input[:status] = 'review' if user[:permissions] == 'lead'
         end
 
+        if input[:status] == 'yes' && user[:permissions] == 'lead'
+          kenji.respond(403, 'Only mentors can link badges.')
+        end
+
         badge_id = input['badge_id']
         user_id = input['user_id']
 
