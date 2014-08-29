@@ -14,6 +14,7 @@ gem 'rubyflake', '~>0.1.0'
 gem 'dalli', '~>2.7.2'
 gem 'pusher-client', '~>0.6.0'
 gem 'aws-sdk', '~>1.51.0'
+gem 'mail', '~>2.6.1'
 
 # production
 gem 'pg', '~>0.17.1'

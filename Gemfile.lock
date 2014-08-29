@@ -13,7 +13,10 @@ GEM
       json
       rack (~> 1.5.2)
     konfiguration (1.0)
+    mail (2.6.1)
+      mime-types (>= 1.16, < 3)
     method_source (0.8.2)
+    mime-types (2.3)
     mini_portile (0.6.0)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
@@ -45,6 +48,7 @@ DEPENDENCIES
   dalli (~> 2.7.2)
   kenji (~> 1.1.2)
   konfiguration (~> 1.0)
+  mail (~> 2.6.1)
   pg (~> 0.17.1)
   pry (~> 0.9.12.6)
   pusher-client (~> 0.6.0)
