@@ -1,3 +1,5 @@
+require 'mail'
+
 module Firebots::InternalAPI::Controllers
 
   class Account < Kenji::Controller
@@ -33,6 +35,8 @@ module Firebots::InternalAPI::Controllers
 
       password = input.delete('password')
       input[:id] = Rubyflake.generate
+
+      send_invite_email(input['first_name'], input['email'], password, user[:first_name])
 
       Models::Users.insert(input.merge(
         time_created: Time.now,
@@ -159,6 +163,25 @@ module Firebots::InternalAPI::Controllers
           :time_created, :time_updated, :title, :technical_group,
           :nontechnical_group].include?(k)
       end.map(&Helpers::HashPairSanitizer)]
+    end
+
+    def send_invite_email(first_name, email, password, inviter_first_name)
+      mail = Mail.new do
+        from 'admin@oflogan.com'
+        to email
+        subject '3501 FRC Training'
+        body <<-EOM
+          Hello #{first_name},
+
+          #{inviter_first_name} has added you to the FRC 3501 training site.
+
+          Your temporary password is #{password}. You should change it immediately.
+
+          Reply to this email to get help with anything.
+        EOM
+      end
+
+      mail.deliver!
     end
   end
 end
