@@ -116,7 +116,7 @@ module Firebots
 
         {
           status: 200,
-          categories: categories.to_a,
+          categories: categories.to_a.sort,
         }
       end
 
