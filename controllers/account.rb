@@ -173,9 +173,11 @@ module Firebots::InternalAPI::Controllers
         body <<-EOM
           Hello #{first_name},
 
-          #{inviter_first_name} has added you to the FRC 3501 training site.
+          #{inviter_first_name} has added you to the FRC 3501 training site: https://app.oflogan.com.
 
           Your temporary password is `#{password}`. You should change it immediately.
+
+          To get a proper avatar, sign up with your email at https://gravatar.com.
 
           Reply to this email to get help with anything.
         EOM
