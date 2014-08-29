@@ -114,7 +114,10 @@ module Firebots
         categories = Models::Badges.select_map(:category)
         categories = Set.new(categories)
 
-        categories.to_a
+        {
+          status: 200,
+          categories: categories.to_a,
+        }
       end
 
       pass '/user', UserBadges
