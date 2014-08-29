@@ -175,7 +175,7 @@ module Firebots::InternalAPI::Controllers
 
           #{inviter_first_name} has added you to the FRC 3501 training site.
 
-          Your temporary password is #{password}. You should change it immediately.
+          Your temporary password is `#{password}`. You should change it immediately.
 
           Reply to this email to get help with anything.
         EOM
