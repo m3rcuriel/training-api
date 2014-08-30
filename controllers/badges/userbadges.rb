@@ -3,6 +3,8 @@ module Firebots
 
     class UserBadges < Kenji::Controller
 
+      # Updates an arbitrary user's badge relations.
+      #
       route :patch, '/' do
         user = requires_authentication!
         unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
@@ -52,7 +54,11 @@ module Firebots
         }
       end
 
+      # Lists an arbitrary users's badges.
+      #
       get '/:id' do |id|
+        user = requires_authentication!
+
         badge_relations = Models::UserBadges.where(user_id: id).to_a
 
         {
@@ -61,7 +67,43 @@ module Firebots
         }
       end
 
+      # Lists how many badges from each category a user has.
+      #
+      get '/:id/category-count' do |id|
+        user = requires_authentication!
+
+        {
+          status: 200,
+          category_counts: count_categories(id)
+        }
+      end
+
+      # Lists how many badges from each category the current user has.
+      #
+      get '/category-count' do
+        user = requires_authentication!
+
+        {
+          status: 200,
+          category_counts: count_categories(user[:id]),
+        }
+      end
+
       private
+
+      def count_categories(id)
+        categories = Models::Badges.select_map(:category)
+        categories = Set.new(categories).to_a
+
+        categories.map do |category|
+          earned_badge_relations = Models::UserBadges.where(user_id: id, status: 'yes')
+          earned_badges = earned_badge_relations.map do |relation|
+            Models::Badges[id: relation[:badge_id], category: category]
+          end
+
+          Hash[category, earned_badges.compact.count]
+        end.reduce({}, :merge)
+      end
 
       def sanitizer
         @sanitizer ||= Badges.new
