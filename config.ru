@@ -3,9 +3,12 @@ require 'rubygems'
 require 'bundler/setup'
 require 'rack'
 require 'rack/cors'
+require 'rack-json-logs'
 require 'kenji'
 
 # use Rack::ShowExceptions
+
+use Rack::JsonLogs, pretty_print: (ENV['HOME'] != '/home/ec2-user')
 
 use Rack::Cors do
   allow do
