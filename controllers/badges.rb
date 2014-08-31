@@ -120,6 +120,21 @@ module Firebots
         }
       end
 
+      delete '/:id' do |id|
+        user = requires_authentication!
+        unless user[:permissions] == 'mentor'
+          kenji.respond(403, 'You are not allowed to delete badges.')
+        end
+
+        Models::UserBadges.where(badge_id: id).delete
+        Models::Badges.where(id: id).delete
+
+        {
+          status: 200,
+          message: 'Badge deleted.'
+        }
+      end
+
       pass '/user', UserBadges
 
       # -- Helper methods
