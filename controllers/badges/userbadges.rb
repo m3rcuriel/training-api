@@ -89,6 +89,29 @@ module Firebots
         }
       end
 
+      # Lists every badge that every user has with the given status
+      #
+      get '/all' do
+        user = requires_authentication!
+        unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
+          kenji.respond(403, 'Only leads/mentors can see this information.')
+        end
+
+        input = kenji.validated_input do
+          validates_type_of 'status', is: String, when: :is_set
+        end
+
+        input['status'] = 'review' unless input['status']
+
+        all_user_ids = Models::Users.select_map(:id)
+
+        all_user_ids.map do |user_id|
+          badge_ids = Models::UserBadges.where(status: input['status'], user_id: user_id).select_map(:badge_id)
+
+          Hash[user_id, badge_ids]
+        end.reduce({}, :merge)
+      end
+
       private
 
       def count_categories(id)
