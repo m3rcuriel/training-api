@@ -105,11 +105,17 @@ module Firebots
 
         all_user_ids = Models::Users.select_map(:id)
 
-        all_user_ids.map do |user_id|
+        users_badges_hash = all_user_ids.map do |user_id|
           badge_ids = Models::UserBadges.where(status: input['status'], user_id: user_id).select_map(:badge_id)
 
-          Hash[user_id, badge_ids]
+          user = Models::Users[id: user_id]
+          Hash["#{user[:first_name]} #{user[:last_name]}", badge_ids]
         end.reduce({}, :merge)
+
+        {
+          status: 200,
+          all: users_badges_hash,
+        }
       end
 
       private
