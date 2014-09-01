@@ -114,7 +114,7 @@ module Firebots
 
         {
           status: 200,
-          all: users_badges_hash,
+          all: users_badges_hash.reject{ |k, v| v.nil? },
         }
       end
 
