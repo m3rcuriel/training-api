@@ -12,8 +12,7 @@ ssh-add ~/.ssh/id_rsa
 cat .ssh/id_rsa.pub # copy the output, paste into gitlabs under settings -> deploy key
 
 sudo yum install git postgresql-devel postfix nginx
-sudo postfix status # check if postfix is running
-sudo postfix start # if not running
+sudo postfix start
 
 git clone git@gitlab.com:loganh/training-api.git
 cd training-api
