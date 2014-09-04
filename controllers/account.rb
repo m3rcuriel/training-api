@@ -66,17 +66,36 @@ module Firebots::InternalAPI::Controllers
       }
     end
 
+    # Returns information about a user.
+    #
+    get '/:username' do |username|
+      user = requires_authentication!
+
+      user = Models::Users[username:  username]
+
+      {
+        status: 200,
+        user: sanitized_user(user),
+      }
+    end
+
+    # Returns information about a user by id.
+    #
+    get '/id/:id' do |id|
+      user = requires_authentication!
+
+      user = Models::Users[id: id]
+
+      {
+        status: 200,
+        user: sanitized_user(user),
+      }
+    end
+
     # Returns information about the currently authenticated user.
     #
     get '/' do
       user = requires_authentication!
-
-      input = kenji.validated_input do
-        validates_type_of 'username', is: String, when: :is_set
-      end
-
-      user = Models::Users[username:  input['username']] if input['username']
-      user = Models::Users[id:        input['id'].to_i]  if input['id']
 
       {
         status: 200,
