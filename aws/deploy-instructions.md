@@ -19,6 +19,7 @@ cd training-api
 
 gem install bundler
 \curl -sSL https://get.rvm.io | bash
+source /home/ec2-user/.rvm/scripts/rvm
 rvm install ruby-2.1.1
 bundle install
 
