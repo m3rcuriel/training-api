@@ -71,17 +71,12 @@ module Firebots::InternalAPI::Controllers
     get '/' do
       user = requires_authentication!
 
-      {
-        status: 200,
-        user: sanitized_user(user),
-      }
-    end
+      input = kenji.validated_input do
+        validates_type_of 'username', is: String, when: :is_set
+      end
 
-    get '/:id' do |id|
-      user = requires_authentication!
-
-      user = Models::Users[id: id.to_i]
-      kenji.respond(404, 'No such user.') unless user
+      user = Models::Users[username:  input['username']] if input['username']
+      user = Models::Users[id:        input['id'].to_i]  if input['id']
 
       {
         status: 200,
