@@ -56,10 +56,11 @@ module Firebots
 
       # Lists an arbitrary users's badges.
       #
-      get '/:id' do |id|
+      get '/:username' do |username|
         user = requires_authentication!
 
-        badge_relations = Models::UserBadges.where(user_id: id).to_a
+        user_id = Models::Users[username: username][:id]
+        badge_relations = Models::UserBadges.where(user_id: user_id).to_a
 
         {
           status: 200,
