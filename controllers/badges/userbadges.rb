@@ -70,12 +70,12 @@ module Firebots
 
       # Lists how many badges from each category a user has.
       #
-      get '/:id/category-count' do |id|
+      get '/:username/category-count' do |username|
         user = requires_authentication!
 
         {
           status: 200,
-          category_counts: count_categories(id)
+          category_counts: count_categories(username)
         }
       end
 
@@ -86,7 +86,7 @@ module Firebots
 
         {
           status: 200,
-          category_counts: count_categories(user[:id]),
+          category_counts: count_categories(user[:username]),
         }
       end
 
@@ -121,12 +121,14 @@ module Firebots
 
       private
 
-      def count_categories(id)
+      def count_categories(username)
+        user_id = Models::Users[username: username][:id]
+
         categories = Models::Badges.select_map(:category)
         categories = Set.new(categories).to_a
 
         categories.map do |category|
-          earned_badge_relations = Models::UserBadges.where(user_id: id, status: 'yes')
+          earned_badge_relations = Models::UserBadges.where(user_id: user_id, status: 'yes')
           earned_badges = earned_badge_relations.map do |relation|
             Models::Badges[id: relation[:badge_id], category: category]
           end
