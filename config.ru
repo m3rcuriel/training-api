@@ -8,7 +8,7 @@ require 'kenji'
 
 # use Rack::ShowExceptions
 
-use Rack::JsonLogs, pretty_print: (ENV['HOME'] != '/home/ec2-user')
+use Rack::JsonLogs, pretty_print: (ENV['HOME'] != '/home/ec2-user'), print_options: {stdout: true, stderr: true}
 
 use Rack::Cors do
   allow do

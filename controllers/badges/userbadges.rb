@@ -71,7 +71,7 @@ module Firebots
       # Lists how many badges from each category a user has.
       #
       get '/:username/category-count' do |username|
-        user = requires_authentication!
+        # user = requires_authentication!
 
         {
           status: 200,
@@ -122,7 +122,9 @@ module Firebots
       private
 
       def count_categories(username)
-        user_id = Models::Users[username: username][:id]
+        user = Models::Users[username: username]
+        kenji.respond(404, 'No such user.') unless user
+        user_id = user[:id]
 
         categories = Models::Badges.select_map(:category)
         categories = Set.new(categories).to_a
