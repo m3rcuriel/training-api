@@ -71,7 +71,7 @@ module Firebots
       # Lists how many badges from each category a user has.
       #
       get '/:username/category-count' do |username|
-        # user = requires_authentication!
+        user = requires_authentication!
 
         {
           status: 200,
