@@ -16,6 +16,7 @@ gem 'dalli', '~>2.7.2'
 gem 'pusher-client', '~>0.6.0'
 gem 'aws-sdk', '~>1.51.0'
 gem 'mail', '~>2.6.1'
+gem 'fortune_gem', '~>0.0.8'
 
 # production
 gem 'pg', '~>0.17.1'

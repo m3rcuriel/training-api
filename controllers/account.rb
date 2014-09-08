@@ -1,4 +1,4 @@
-require 'mail'
+require 'lib/email'
 
 module Firebots::InternalAPI::Controllers
 
@@ -180,7 +180,7 @@ module Firebots::InternalAPI::Controllers
     end
 
     def send_invite_email(first_name, email, password, inviter_first_name)
-      mail = Mail.new do
+      Firebots::Email.send do
         from 'admin@oflogan.com'
         to email
         subject '3501 FRC Training'
@@ -196,8 +196,6 @@ module Firebots::InternalAPI::Controllers
           Reply to this email to get help with anything.
         EOM
       end
-
-      mail.deliver!
     end
   end
 end

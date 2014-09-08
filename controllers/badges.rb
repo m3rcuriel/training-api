@@ -1,4 +1,6 @@
 require 'aws-sdk'
+require 'fortune_gem'
+require 'lib/email'
 
 module Firebots
   module InternalAPI::Controllers
@@ -40,6 +42,7 @@ module Firebots
         ))
 
         badge = Models::Badges[id: input[:id]]
+        send_new_badge_email(badge, user)
 
         all_users = Models::Users.all
         all_users.each do |user|
@@ -147,6 +150,31 @@ module Firebots
             :learning_method, :assessment, :category, :subcategory, :level,
             :resources, :verifiers].include?(k)
         end.map(&Helpers::HashPairSanitizer)]
+      end
+
+      def send_new_badge_email(badge, user)
+        Firebots::Email.send do
+          from 'admin@oflogan.com'
+          to 'Sohini Stone <sohiniss@gmail.com>'
+          cc 'Logan Howard <logan@oflogan.com>'
+          subject 'New badge – 3501'
+          body <<-EOM
+            Hi Sohini,
+
+            #{user[:first_name]} (#{user[:title]}) has created a new #{badge[:category]} badge.
+            Link: https://app.oflogan.com/badge/#{badge[:id]}
+
+            Name: #{badge[:name]}
+            Subcategory: #{badge[:subcategory]}
+
+            Description:
+            #{badge[:description]}
+
+            -----
+
+            #{::FortuneGem.give_fortune}
+          EOM
+        end
       end
     end
   end
