@@ -10,6 +10,7 @@ module Firebots::InternalAPI::Controllers
     pass '/auth', Auth
     pass '/account', Account
     pass '/badges', Badges
+    pass '/public', Public
 
   end
 end

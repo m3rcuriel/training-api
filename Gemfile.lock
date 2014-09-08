@@ -6,6 +6,7 @@ GEM
       nokogiri (>= 1.4.4)
     coderay (1.1.0)
     colorize (0.7.3)
+    curb (0.8.6)
     daemons (1.1.9)
     dalli (2.7.2)
     eventmachine (1.0.3)
@@ -53,6 +54,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 1.51.0)
+  curb (~> 0.8.6)
   dalli (~> 2.7.2)
   fortune_gem (~> 0.0.8)
   kenji (~> 1.1.2)
