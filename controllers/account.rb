@@ -1,3 +1,4 @@
+require 'simple-password-gen'
 require 'lib/email'
 
 module Firebots::InternalAPI::Controllers
@@ -20,9 +21,6 @@ module Firebots::InternalAPI::Controllers
 
         validates_regex 'email', matches: /^.+@.+\..+$/
 
-        validates 'password', with: -> { self.length >= 8 },
-          reason: 'must be at least 8 characters.'
-
         validates 'email',
           with: -> { Models::Users[email: self].nil? },
           reason: 'must be unique.'
@@ -33,7 +31,7 @@ module Firebots::InternalAPI::Controllers
         allow_keys :valid
       end
 
-      password = input.delete('password')
+      password = Password.pronounceable
       input[:id] = Rubyflake.generate
 
       send_invite_email(input['first_name'], input['email'], password, user[:first_name])
