@@ -115,26 +115,66 @@ module Firebots
       end
 
       get '/categories' do
-        categories = Models::Badges.select_map(:category)
-        categories = Set.new(categories)
+        categories = get_categories
 
         {
           status: 200,
-          categories: categories.to_a.sort,
+          categories: categories.sort,
         }
       end
 
-      get '/:username/:category/level' do |category|
+      get '/level/:username/:category' do |category|
         user = requires_authentication!
         user = Models::Users[username: username]
 
-        count_earned_badges(user, category)
+        level_hash = get_category_levels(user, category)
+
+        {
+          status: 200,
+          levels: get_level(level_hash),
+        }
       end
 
-      get '/:category/level' do |category|
+      get '/level/:category' do |category|
         user = requires_authentication!
 
-        count_earned_badges(user, category)
+        level_hash = get_category_levels(user, category)
+
+        {
+          status: 200,
+          level: get_level(level_hash),
+        }
+      end
+
+      get '/levels' do
+        user = requires_authentication!
+
+        all_levels = get_all_levels(user)
+
+        all_levels = get_categories.map do |category|
+          Hash[category, get_level(all_levels[category])]
+        end.reduce({}, :merge)
+
+        {
+          status: 200,
+          levels: all_levels,
+        }
+      end
+
+      get '/:username/levels' do |username|
+        user = requires_authentication!
+        user = Models::Users[username: username]
+
+        all_levels = get_all_levels(user)
+
+        all_levels = get_categories.map do |category|
+          Hash[category, get_level(all_levels[category])]
+        end.reduce({}, :merge)
+
+        {
+          status: 200,
+          levels: all_levels,
+        }
       end
 
       delete '/:id' do |id|
@@ -157,23 +197,55 @@ module Firebots
       # -- Helper methods
       private
 
-      def count_earned_badges(user, category)
-        badges = Models::Badges[category: category]
+      def get_categories
+        categories = Models::Badges.select_map(:category)
+        Set.new(categories).to_a
+      end
+
+      def get_level(levels_hash)
+        (1..4).each do |level|
+          level_hash = levels_hash[level]
+
+          unless level_hash[:total] != 0 && level_hash[:earned] == level_hash[:total]
+            return level - 1
+          end
+        end
+
+        4
+      end
+
+      def get_all_levels(user)
+        get_categories.map do |category|
+          counts = (1..4).map do |level|
+            count_earned_badges(user, category, level)
+          end.reduce({}, :merge)
+
+          Hash[category, counts]
+        end.reduce({}, :merge)
+      end
+
+      def get_category_levels(user, category)
+        (1..4).map do |level|
+          count_earned_badges(user, category, level)
+        end.reduce({}, :merge)
+      end
+
+      def count_earned_badges(user, category, level)
+        badges = Models::Badges.where(category: category, level: level).to_a
 
         earned_badges = 0
         badges.each do |badge|
           relation = Models::UserBadges[badge_id: badge[:id], user_id: user[:id]]
 
-          if relation[:status] == 'yes'
+          if relation && relation[:status] == 'yes'
             earned_badges += 1
           end
         end
 
-        {
-          status: 200,
-          total: badges.count,
-          earned: earned_badges,
-        }
+        Hash[level, {
+            total: badges.count,
+            earned: earned_badges,
+        }]
       end
 
       def sanitized_badge(badge)
