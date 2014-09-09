@@ -161,7 +161,7 @@ module Firebots
         }
       end
 
-      get '/:username/levels' do |username|
+      get '/levels/:username' do |username|
         user = requires_authentication!
         user = Models::Users[username: username]
 
@@ -260,7 +260,7 @@ module Firebots
         Firebots::Email.send do
           from 'admin@oflogan.com'
           to 'Sohini Stone <sohiniss@gmail.com>'
-          cc 'Logan Howard <logan@oflogan.com>'
+          cc ['Sitar Harel <sitar@sitarharel.com>', 'Logan Howard <logan@oflogan.com>']
           subject 'New badge – 3501'
           body <<-EOM
             Hi Sohini,
