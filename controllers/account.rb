@@ -139,7 +139,7 @@ module Firebots::InternalAPI::Controllers
 
         # ensure old password is present and correct when necessary
         validates 'old_password',
-          when: -> { !self['password'].nil? || !self['email'].nil? },
+          when: -> { !self['password'].nil? },
           with: -> { self && Firebots::Password.new(user).verify(self) },
           reason: 'is invalid.'
 
