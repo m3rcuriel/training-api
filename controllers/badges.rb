@@ -124,6 +124,19 @@ module Firebots
         }
       end
 
+      get '/:username/:category/level' do |category|
+        user = requires_authentication!
+        user = Models::Users[username: username]
+
+        count_earned_badges(user, category)
+      end
+
+      get '/:category/level' do |category|
+        user = requires_authentication!
+
+        count_earned_badges(user, category)
+      end
+
       delete '/:id' do |id|
         user = requires_authentication!
         unless user[:permissions] == 'mentor'
@@ -143,6 +156,25 @@ module Firebots
 
       # -- Helper methods
       private
+
+      def count_earned_badges(user, category)
+        badges = Models::Badges[category: category]
+
+        earned_badges = 0
+        badges.each do |badge|
+          relation = Models::UserBadges[badge_id: badge[:id], user_id: user[:id]]
+
+          if relation[:status] == 'yes'
+            earned_badges += 1
+          end
+        end
+
+        {
+          status: 200,
+          total: badges.count,
+          earned: earned_badges,
+        }
+      end
 
       def sanitized_badge(badge)
         Hash[badge.select do |k,_|
