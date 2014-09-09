@@ -15,7 +15,7 @@ module Firebots::InternalAPI::Controllers
 
       input = kenji.validated_input do
 
-        validates_type_of 'first_name', 'last_name', 'password', 'username',
+        validates_type_of 'first_name', 'last_name', 'username',
           'technical_group', 'nontechnical_group', is: String
         validates_type_of 'title', is: String, when: :is_set
 
