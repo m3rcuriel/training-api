@@ -20,5 +20,8 @@ end
 require File.expand_path('../init', __FILE__)
 Dir[File.expand_path('../controllers/**/*.rb', __FILE__)].each { |f| require f }
 
+require 'lib/json-url-parser'
+use Firebots::JsonUrlParser::RackMiddleware
+
 run Kenji::App.new(catch_exceptions: true, auto_cors: false,
                    root_controller: Firebots::InternalAPI::Controllers::Root)

@@ -125,6 +125,32 @@ module Firebots
         }
       end
 
+      # Lists all users that have a given badge.
+      #
+      get '/badge/:id' do |id|
+        user = requires_authentication!
+
+        all_user_ids = Models::Users.select_map(:id)
+
+        users_badges_hash = all_user_ids.map do |user_id|
+          relation = Models::UserBadges[user_id: user_id, status: 'yes']
+          user = Models::Users[id: user_id]
+
+          Hash[user[:username], relation]
+        end.reduce({}, :merge)
+
+        users_badges_hash = users_badges_hash.reject{ |k, v| v.nil? }
+        users_badges_hash.each do |k, v|
+          user = Models::Users[username: k]
+          users_badges_hash[k].update(username: user[:username], email: user[:email])
+        end
+
+        {
+          status: 200,
+          relations: users_badges_hash.reject{ |k, v| v.nil? },
+        }
+      end
+
       private
 
       def count_categories(username)

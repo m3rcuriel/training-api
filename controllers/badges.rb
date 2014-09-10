@@ -65,7 +65,7 @@ module Firebots
       # Returns a list of all badges
       #
       get '/all' do
-        badges = Models::Badges.order(:category, :subcategory, :level).all
+        badges = Models::Badges.order(:category, :level, :subcategory).all
 
         {
           status: 200,
