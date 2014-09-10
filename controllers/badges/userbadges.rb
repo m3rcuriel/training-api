@@ -133,7 +133,7 @@ module Firebots
         all_user_ids = Models::Users.select_map(:id)
 
         users_badges_hash = all_user_ids.map do |user_id|
-          relation = Models::UserBadges[user_id: user_id, status: 'yes']
+          relation = Models::UserBadges[badge_id: id, user_id: user_id, status: 'yes']
           user = Models::Users[id: user_id]
 
           Hash[user[:username], relation]
