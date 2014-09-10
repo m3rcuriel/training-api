@@ -75,7 +75,7 @@ module Firebots
 
       # Updates badge properties.
       #
-      route :patch, '/:id' do |id|
+      patch '/:id' do |id|
         user = requires_authentication!
         unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
           kenji.respond(403, "You don't have badge update permissions.")

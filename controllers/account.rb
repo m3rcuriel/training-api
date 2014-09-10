@@ -118,7 +118,7 @@ module Firebots::InternalAPI::Controllers
     #
     # TODO: real patch keyword
     #
-    route :patch, '/' do
+    patch '/' do
       user = requires_authentication!
 
       input = kenji.validated_input do

@@ -5,7 +5,7 @@ module Firebots
 
       # Updates an arbitrary user's badge relations.
       #
-      route :patch, '/' do
+      patch '/' do
         user = requires_authentication!
         unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
           kenji.respond(403, "You are not allowed to change user badges.")
@@ -16,12 +16,12 @@ module Firebots
           validates_type_of 'badge_id', 'user_id', is: String
         end
 
-        unless input[:status]
-          input[:status] = 'yes' if user[:permissions] == 'mentor'
-          input[:status] = 'review' if user[:permissions] == 'lead'
+        unless input['status']
+          input['status'] = 'yes' if user[:permissions] == 'mentor'
+          input['status'] = 'review' if user[:permissions] == 'lead'
         end
 
-        if input[:status] == 'yes' && user[:permissions] == 'lead'
+        if input['status'] == 'yes' && user[:permissions] == 'lead'
           kenji.respond(403, 'Only mentors can link badges.')
         end
 
@@ -35,9 +35,15 @@ module Firebots
           )
         )
 
+        if input['status'] == 'no'
+          message = 'User unlinked from badge.'
+        else
+          message = 'User linked with badge.'
+        end
+
         {
           status: 200,
-          message: 'User linked with badge.',
+          message: message,
         }
       end
 
