@@ -70,7 +70,7 @@ module Firebots::InternalAPI::Controllers
       token = Firebots::Authentication.new(user).generate_token(meta)
 
       # log email of person who logged in
-      puts user[:email]
+      put user[:email]
 
       {
         status: 200,
