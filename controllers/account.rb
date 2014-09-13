@@ -73,7 +73,7 @@ module Firebots::InternalAPI::Controllers
 
       {
         status: 200,
-        user: sanitized_user(user),
+        user: sanitized_no_email(user),
       }
     end
 
@@ -86,7 +86,7 @@ module Firebots::InternalAPI::Controllers
 
       {
         status: 200,
-        user: sanitized_user(user),
+        user: sanitized_no_email(user),
       }
     end
 
@@ -110,7 +110,7 @@ module Firebots::InternalAPI::Controllers
 
       {
         status: 200,
-        users: all.map {|u| sanitized_user(u)},
+        users: all.map {|u| sanitized_no_email(u)},
       }
     end
 
@@ -172,6 +172,14 @@ module Firebots::InternalAPI::Controllers
     def sanitized_user(user)
       Hash[user.select do |k,_|
         [:id, :first_name, :last_name, :username, :email, :permissions,
+          :time_created, :time_updated, :title, :technical_group,
+          :nontechnical_group].include?(k)
+      end.map(&Helpers::HashPairSanitizer)]
+    end
+
+    def sanitized_no_email(user)
+      Hash[user.select do |k,_|
+        [:id, :first_name, :last_name, :username, :permissions,
           :time_created, :time_updated, :title, :technical_group,
           :nontechnical_group].include?(k)
       end.map(&Helpers::HashPairSanitizer)]
