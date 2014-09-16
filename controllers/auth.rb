@@ -79,5 +79,63 @@ module Firebots::InternalAPI::Controllers
       }
     end
 
+    # Sends a password reset email
+    #
+    post '/forgot-password' do
+
+      input = kenji.validated_input do
+        validates_regex 'email', matches: /^.+@.+\..+$/
+        allow_keys :valid
+      end
+
+      user = Models::Users[email: input['email']]
+      kenji.respond(404, 'No such user.') unless user
+
+      send_reset_email(user)
+
+      {
+        status: 200,
+        message: 'Password reset request received.',
+      }
+    end
+
+    private
+
+    def send_reset_email(user)
+      token = generate_token(user, 'password-reset')
+      link = generate_link('/forgot-password/reset', {token: CGI.escape(token)})
+
+      Firebots::Email.send do
+        from 'admin@oflogan.com'
+        to user[:email]
+        subject '3501 Firebots – Password Reset'
+        body <<-EOM
+          Hi #{user[:first_name]},
+
+          You appear to have requested a password reset. If this was not you,
+          ignore this email.
+
+          Click this link to choose a new password:
+
+          #{link}
+
+
+          The Firebots Team
+        EOM
+      end
+    end
+
+    def generate_link(endpoint, params)
+      URI.const_get(:HTTPS).build(
+        host: 'app.oflogan.com',
+        path: endpoint,
+        query: !params.empty? ? URI.encode_www_form(params) : nil
+      ).to_s
+    end
+
+    def generate_token(user, permissions)
+      Authentication.new(user).generate_token(permissions: [permissions])
+    end
+
   end
 end
