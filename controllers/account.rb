@@ -69,7 +69,7 @@ module Firebots::InternalAPI::Controllers
     get '/:username' do |username|
       user = requires_authentication!
 
-      user = Models::Users[username:  username]
+      user = Models::Users[username: username]
 
       {
         status: 200,
@@ -142,9 +142,10 @@ module Firebots::InternalAPI::Controllers
           when: -> { !self['password'].nil? },
           with: -> { self && Firebots::Password.new(user).verify(self) },
           reason: 'is invalid.'
-
-        allow_keys :valid
       end
+
+      # don't allow this
+      input.delete('title')
 
       # save new password, if requested
       Firebots::Password.new(user).save_password!(input['password']) if input['password']
