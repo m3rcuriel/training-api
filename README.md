@@ -1,33 +1,6 @@
 # Get started
 
-To install postgres, `brew install postgres` (OS X). Set up a db in the app root directory:
-```bash
-mkdir -p db/pg
-initdb db/pg
-createdb training
-```
-
-Run in one window with:
-```bash
-postgres -D db/pg
-```
-
-Run memcached too (in another window) (should be preinstalled on OS X):
-```bash
-memcached
-```
-
-Install `pygments`:
-```bash
-sudo pip install pygments
-```
-
-```bash
-bundle install # get dependencies
-sequel -m migrations postgres://localhost:5432/training # run migrations
-bundle exec thin -R config.ru -p 9977 start # start the server on port 9977
-# navigate to `http://localhost:9977` to see a 404 not found json hash.
-```
+Follow [these instructions](https://gitlab.com/fremont-robotics-software-team/general/blob/master/tutorials/setup/training-api.md).
 
 Whenever you create a new migration, use: `touch migrations/$(date +%s)_name_of_migration.rb`.
 
