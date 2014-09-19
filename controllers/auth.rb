@@ -134,7 +134,7 @@ module Firebots::InternalAPI::Controllers
     end
 
     def generate_token(user, permissions)
-      Authentication.new(user).generate_token(permissions: [permissions])
+      Firebots::Authentication.new(user).generate_token(permissions: [permissions])
     end
 
   end
