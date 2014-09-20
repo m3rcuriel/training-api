@@ -99,6 +99,27 @@ module Firebots::InternalAPI::Controllers
       }
     end
 
+    # Verifies a password reset token and uses it to reset the user's password.
+    #
+    post '/forgot-password/reset' do
+
+      input = kenji.validated_input do
+        validates_type_of 'reset-token', is: String
+        validates 'password', with: -> { self.length >= 8 },
+          reason: 'must be at least 8 characters.'
+      end
+
+      user = verify_token(input['reset-token'], 'password-reset')
+
+      Firebots::Password.new(user).save_password!(input['password'])
+
+      {
+        status: 200,
+        email: user[:email],
+        message: 'Password reset.',
+      }
+    end
+
     private
 
     def send_reset_email(user)
@@ -112,8 +133,8 @@ module Firebots::InternalAPI::Controllers
         body <<-EOM
           Hi #{user[:first_name]},
 
-          You appear to have requested a password reset. If this was not you,
-          ignore this email.
+          You appear to have requested a password reset.
+          If this was not you, ignore this email.
 
           Click this link to choose a new password:
 
@@ -135,6 +156,28 @@ module Firebots::InternalAPI::Controllers
 
     def generate_token(user, permissions)
       Firebots::Authentication.new(user).generate_token(permissions: [permissions])
+    end
+
+    # This method is used to verify that a token is valid.
+    #
+    def verify_token(token, permission)
+      meta = Firebots::Authentication.metadata(token)
+
+      unless meta['user'] && meta['permissions'] && meta['permissions'].include?(permission)
+        kenji.respond(403, 'Unauthorized.')
+      end
+
+      unless meta['time'] && meta['time'] + (3600 * 24) > Time.now.to_i
+        kenji.respond(403, 'Token expired.')
+      end
+
+      user = Models::Users[id: meta['user']]
+
+      unless user && Firebots::Authentication.new(user).verify_token(token)
+        kenji.respond(403, 'Unauthorized.')
+      end
+
+      user
     end
 
   end
