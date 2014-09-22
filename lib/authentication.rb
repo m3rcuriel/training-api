@@ -35,7 +35,7 @@ module Firebots
     #
     def verify_token(token)
       key = @user[:password_key]
-      auth, mac = self.class.split_token(token)
+      auth, mac = self.class.split_token(URI.decode(token))
       computed_mac = OpenSSL::HMAC.digest(OpenSSL::Digest::SHA256.new, [key].pack('H*'), auth)
       mac == computed_mac
     end
