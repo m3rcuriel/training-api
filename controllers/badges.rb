@@ -1,6 +1,7 @@
 require 'aws-sdk'
 require 'fortune_gem'
 require 'lib/email'
+require 'lib/cache'
 
 module Firebots
   module InternalAPI::Controllers
@@ -65,7 +66,13 @@ module Firebots
       # Returns a list of all badges
       #
       get '/all' do
-        badges = Models::Badges.order(:category, :level, :subcategory).all
+        unless badges = Cache.get('all-badges')
+          Cache.set('all-badges',
+            Models::Badges.order(:category, :level, :subcategory).all,
+            60)
+        end
+
+        badges ||= Cache.get('all-badges')
 
         {
           status: 200,
@@ -198,8 +205,14 @@ module Firebots
       private
 
       def get_categories
+        cached = Cache.get('categories')
+        return cached if cached
+
         categories = Models::Badges.select_map(:category)
-        Set.new(categories).to_a
+        categories = Set.new(categories).to_a
+
+        Cache.set('categories', categories, 30)
+        categories
       end
 
       def get_level(levels_hash)

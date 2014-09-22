@@ -1,3 +1,5 @@
+require 'lib/cache'
+
 module Firebots
   module InternalAPI::Controllers
 
@@ -52,7 +54,7 @@ module Firebots
       get '/' do
         user = requires_authentication!
 
-        badge_relations = Models::UserBadges.where(user_id: user[:id]).to_a
+        badge_relations = Models::UserBadges.where(user_id: user[:id]).all
 
         {
           status: 200,
@@ -66,7 +68,7 @@ module Firebots
         user = requires_authentication!
 
         user_id = Models::Users[username: username][:id]
-        badge_relations = Models::UserBadges.where(user_id: user_id).to_a
+        badge_relations = Models::UserBadges.where(user_id: user_id).all
 
         {
           status: 200,
@@ -100,28 +102,24 @@ module Firebots
       #
       get '/all' do
         user = requires_authentication!
-        unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
-          kenji.respond(403, 'Only leads/mentors can see this information.')
-        end
 
         input = kenji.validated_input do
           validates_type_of 'status', is: String, when: :is_set
         end
 
-        input['status'] = 'review' unless input['status']
+        status = input['status'] || 'review'
 
-        all_user_ids = Models::Users.select_map(:id)
+        unless badges = Cache.get("#{status}-all-user-badges")
+          Cache.set("#{status}-all-user-badges",
+            all_user_badges(status),
+            2)
+        end
 
-        users_badges_hash = all_user_ids.map do |user_id|
-          badge_ids = Models::UserBadges.where(status: input['status'], user_id: user_id).select_map(:badge_id)
-
-          user = Models::Users[id: user_id]
-          Hash["#{user[:first_name]} #{user[:last_name]}", badge_ids]
-        end.reduce({}, :merge)
+        badges ||= Cache.get("#{status}-all-user-badges")
 
         {
           status: 200,
-          all: users_badges_hash.reject{ |k, v| v.nil? },
+          all: badges.reject{ |k, v| v.nil? },
         }
       end
 
@@ -153,6 +151,19 @@ module Firebots
 
       private
 
+      def all_user_badges(status)
+        all_user_ids = Models::Users.select_map(:id)
+
+        users_badges_hash = all_user_ids.map do |user_id|
+          badge_ids = Models::UserBadges
+            .where(status: status, user_id: user_id)
+            .select_map(:badge_id)
+
+          user = Models::Users[id: user_id]
+          Hash["#{user[:first_name]} #{user[:last_name]}", badge_ids]
+        end.reduce({}, :merge)
+      end
+
       def count_categories(username)
         user = Models::Users[username: username]
         kenji.respond(404, 'No such user.') unless user
@@ -162,7 +173,9 @@ module Firebots
         categories = Set.new(categories).to_a
 
         categories.map do |category|
-          earned_badge_relations = Models::UserBadges.where(user_id: user_id, status: 'yes')
+          earned_badge_relations = Models::UserBadges
+            .where(user_id: user_id, status: 'yes')
+
           earned_badges = earned_badge_relations.map do |relation|
             Models::Badges[id: relation[:badge_id], category: category]
           end
