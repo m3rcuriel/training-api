@@ -140,7 +140,11 @@ module Firebots
         users_badges_hash = users_badges_hash.reject{ |k, v| v.nil? }
         users_badges_hash.each do |k, v|
           user = Models::Users[username: k]
-          users_badges_hash[k].update(username: user[:username], email: user[:email])
+          users_badges_hash[k].update(
+            username: user[:username],
+            email: user[:email],
+            first_name: user[:first_name]
+          )
         end
 
         {
