@@ -156,16 +156,44 @@ module Firebots
       private
 
       def all_user_badges(status)
-        all_user_ids = Models::Users.select_map(:id)
+        all_users = Models::Users.all
 
-        users_badges_hash = all_user_ids.map do |user_id|
-          badge_ids = Models::UserBadges
-            .where(status: status, user_id: user_id)
-            .select_map(:badge_id)
+        users_badges_hash = all_users.map do |user|
+          badge_relations = Models::UserBadges
+            .where(status: status, user_id: user[:id])
 
-          user = Models::Users[id: user_id]
-          Hash["#{user[:first_name]} #{user[:last_name]}", badge_ids]
-        end.reduce({}, :merge)
+          # array of badge ids and of user ids
+          badge_ids = badge_relations.select_map(:badge_id)
+          reviewer_ids = badge_relations.select_map(:reviewer_id)
+
+          # [a,b].zip([c, d]) = [[a,c],[b,d]]
+          badges = badge_ids.zip(reviewer_ids).map do |badge_id, reviewer_id|
+            reviewer = Models::Users[id: reviewer_id]
+            if reviewer
+              reviewer_data = {
+                first_name: reviewer[:first_name],
+                last_name: reviewer[:last_name],
+              }
+            else
+              reviewer_data = {
+                first_name: 'Unknown',
+                last_name:  'Reviewer',
+              }
+            end
+
+            {
+              badge_id: badge_id,
+              reviewer: reviewer_data,
+            }
+          end
+
+          Hash[user[:username], {
+            badges: badges,
+            user: {first_name: user[:first_name], last_name: user[:last_name]},
+          }]
+        end
+        .reduce({}, :merge)
+        .delete_if {|k, v| v[:badges].empty?}
       end
 
       def count_categories(username)
