@@ -3,7 +3,7 @@ module Firebots
 
     class << self
 
-      def self.new_user(user)
+      def new_user(user)
         params = {
           person: {
             :'first-name' => user[:first_name],
