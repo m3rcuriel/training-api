@@ -1,5 +1,5 @@
 module Firebots
-  module Teamwork
+  class Teamwork
 
     class << self
 
