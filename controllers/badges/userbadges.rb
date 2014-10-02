@@ -111,11 +111,11 @@ module Firebots
 
         unless badges = Cache.get("#{status}-all-user-badges")
           Cache.set("#{status}-all-user-badges",
-            all_user_badges(status),
+            result = all_user_badges(status),
             2)
         end
 
-        badges ||= Cache.get("#{status}-all-user-badges")
+        badges ||= result
 
         {
           status: 200,

@@ -68,11 +68,11 @@ module Firebots
       get '/all' do
         unless badges = Cache.get('all-badges')
           Cache.set('all-badges',
-            Models::Badges.order(:category, :level, :subcategory).all,
+            result = Models::Badges.order(:category, :level, :subcategory).all,
             60)
         end
 
-        badges ||= Cache.get('all-badges')
+        badges ||= result
 
         {
           status: 200,
@@ -279,7 +279,7 @@ module Firebots
             Hi Sohini,
 
             #{user[:first_name]} (#{user[:title]}) has created a new #{badge[:category]} badge.
-            Link: https://app.oflogan.com/badge/#{badge[:id]}
+            Link: https://app.fremontrobotics.com/badge/#{badge[:id]}
 
             Name: #{badge[:name]}
             Subcategory: #{badge[:subcategory]}

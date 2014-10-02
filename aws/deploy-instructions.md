@@ -42,7 +42,7 @@ Your `nginx.conf` should mostly remain default, but scroll to `server` and add t
 
     server {
         ...
-        server_name api.oflogan.com;
+        server_name api.fremontrobotics.com;
 
         location / {
             proxy_set_header X-Real-IP $remote_addr;
