@@ -244,15 +244,15 @@ module Firebots
       end
 
       def count_earned_badges(user, category, level)
-        badges = Models::Badges.where(category: category, level: level).to_a
+        badges = Models::Badges.where(category: category, level: level).all
 
         earned_badges = 0
         badges.each do |badge|
-          relation = Models::UserBadges[badge_id: badge[:id], user_id: user[:id]]
-
-          if relation && relation[:status] == 'yes'
-            earned_badges += 1
-          end
+          earned_badges += 1 if Models::UserBadges[
+            badge_id: badge[:id],
+            user_id: user[:id],
+            status: 'yes',
+          ]
         end
 
         Hash[level, {
