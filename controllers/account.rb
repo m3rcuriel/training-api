@@ -18,7 +18,7 @@ module Firebots::InternalAPI::Controllers
 
         validates_type_of 'first_name', 'last_name', 'username',
           'technical_group', 'nontechnical_group', is: String
-        validates_type_of 'title', is: String, when: :is_set
+        validates_type_of 'title', 'bio', is: String, when: :is_set
 
         validates_regex 'email', matches: /^.+@.+\..+$/
 
@@ -127,7 +127,7 @@ module Firebots::InternalAPI::Controllers
       input = kenji.validated_input do
 
         validates_type_of 'first_name', 'last_name', 'password',
-          'technical_group', 'nontechnical_group', 'title',
+          'technical_group', 'nontechnical_group', 'title', 'bio',
           is: String, when: :is_set
 
         validates_regex 'email', matches: /^.+@.+\..+$/, when: :is_set
@@ -176,7 +176,7 @@ module Firebots::InternalAPI::Controllers
     def sanitized_user(user)
       Hash[user.select do |k,_|
         [:id, :first_name, :last_name, :username, :email, :permissions,
-          :time_created, :time_updated, :title, :technical_group,
+          :time_created, :time_updated, :title, :technical_group, :bio,
           :nontechnical_group].include?(k)
       end.map(&Helpers::HashPairSanitizer)]
     end
