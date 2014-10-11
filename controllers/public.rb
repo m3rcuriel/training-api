@@ -24,5 +24,15 @@ module Firebots::InternalAPI::Controllers
       }
     end
 
+    get '/message' do
+      http = Curl.get('https://gist.githubusercontent.com/PikaDotus/'\
+        '97bb3fdebbc0446c964a/raw/alert')
+
+      {
+        status: 200,
+        message: http.body_str.force_encoding('UTF-8')
+      }
+    end
+
   end
 end
