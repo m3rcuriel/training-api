@@ -43,7 +43,6 @@ module Firebots
         ))
 
         badge = Models::Badges[id: input[:id]]
-        send_new_badge_email(badge, user)
 
         all_users = Models::Users.all
         all_users.each do |user|
@@ -56,6 +55,8 @@ module Firebots
             time_updated: Time.now,
           })
         end
+
+        send_new_badge_email(badge, user)
 
         {
           status: 200,
