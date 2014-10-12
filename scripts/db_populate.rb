@@ -21,6 +21,7 @@ DB.transaction do
     title: 'important title',
     technical_group: 'mechanical',
     nontechnical_group: 'pr',
+    bio: 'I am the swaggiest test user, man!!!',
   }
   Models::Users.insert(test_user)
   Firebots::Password.new(test_user).save_password!('to the moon')
