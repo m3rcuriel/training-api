@@ -123,11 +123,9 @@ module Firebots
       end
 
       get '/categories' do
-        categories = get_categories
-
         {
           status: 200,
-          categories: categories.sort,
+          categories: get_categories.sort,
         }
       end
 
