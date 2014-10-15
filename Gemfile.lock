@@ -18,9 +18,13 @@ GEM
     konfiguration (1.0)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
+    mailgun-ruby (1.0.2)
+      json (~> 1.8)
+      rest-client (~> 1.6)
     method_source (0.8.2)
     mime-types (2.3)
     mini_portile (0.6.0)
+    netrc (0.7.7)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     pg (0.17.1)
@@ -37,6 +41,9 @@ GEM
       colorize
       json
       trollop
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rubyflake (0.1.0)
     sequel (4.10.0)
     simple-password-gen (0.1.5)
@@ -60,6 +67,7 @@ DEPENDENCIES
   kenji (~> 1.1.2)
   konfiguration (~> 1.0)
   mail (~> 2.6.1)
+  mailgun-ruby (~> 1.0.2)
   pg (~> 0.17.1)
   pry (~> 0.9.12.6)
   pusher-client (~> 0.6.0)
