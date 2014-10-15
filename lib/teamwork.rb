@@ -63,7 +63,7 @@ module Firebots
           c.headers['Content-Type'] = 'application/json'
 
           c.http_auth_types = :basic
-          c.username = 'elbow327box'
+          c.username = Konfiguration.creds(:teamwork, :username)
           c.password = 'none'
         end
 
