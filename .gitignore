@@ -3,3 +3,4 @@ db
 .bundle
 aws/*.pem
 mosh.sh
+config/shared/creds.yml
