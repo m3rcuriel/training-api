@@ -182,11 +182,11 @@ module Firebots::InternalAPI::Controllers
     end
 
     def send_invite_email(first_name, email, password, inviter_first_name)
-      Firebots::Email.send do
-        from 'admin@oflogan.com'
-        to email
-        subject '3501 FRC Training'
-        body <<-EOM
+      Firebots::Email.send(
+        from: 'admin@mg.fremontrobotics.com',
+        to: email,
+        subject: '3501 FRC Training',
+        text: <<-EOM
           Hello #{first_name},
 
           #{inviter_first_name} has added you to the FRC 3501 training site: https://app.fremontrobotics.com/about.
@@ -197,7 +197,7 @@ module Firebots::InternalAPI::Controllers
 
           Reply to this email to get help with anything.
         EOM
-      end
+      )
     end
   end
 end

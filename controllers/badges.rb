@@ -269,12 +269,12 @@ module Firebots
       end
 
       def send_new_badge_email(badge, user)
-        Firebots::Email.send do
-          from 'admin@oflogan.com'
-          to 'Sohini Stone <sohiniss@gmail.com>'
-          cc ['Sitar Harel <sitar@sitarharel.com>', 'Logan Howard <logan@oflogan.com>']
-          subject 'New badge – 3501'
-          body <<-EOM
+        Firebots::Email.send(
+          from: 'admin@mg.fremontrobotics.com',
+          to: 'Sohini Stone <sohiniss@gmail.com>',
+          cc: ['Sitar Harel <sitar@sitarharel.com>', 'Logan Howard <logan@oflogan.com>'],
+          subject: 'New badge – 3501',
+          text: <<-EOM
             Hi Sohini,
 
             #{user[:first_name]} (#{user[:title]}) has created a new #{badge[:category]} badge.
@@ -290,7 +290,7 @@ module Firebots
 
             #{::FortuneGem.give_fortune}
           EOM
-        end
+        )
       end
     end
   end

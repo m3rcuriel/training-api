@@ -126,11 +126,11 @@ module Firebots::InternalAPI::Controllers
       token = generate_token(user, 'password-reset')
       link = generate_link('/forgot-password/reset', {token: CGI.escape(token)})
 
-      Firebots::Email.send do
-        from 'admin@fremontrobotics.com'
-        to user[:email]
-        subject '3501 Firebots – Password Reset'
-        body <<-EOM
+      Firebots::Email.send(
+        from: 'admin@mg.fremontrobotics.com',
+        to: user[:email],
+        subject: '3501 Firebots – Password Reset',
+        text: <<-EOM
           Hi #{user[:first_name]},
 
           You appear to have requested a password reset.
@@ -143,7 +143,7 @@ module Firebots::InternalAPI::Controllers
 
           The Firebots Team
         EOM
-      end
+      )
     end
 
     def generate_link(endpoint, params)
