@@ -31,13 +31,38 @@ module Firebots
             administrator: 'no',
             canAddProjects: 'no',
             timezoneId: '3',
-            },
+          },
         }
 
-        if response = send_request('/people.json', params)['STATUS'] == 'OK'
-          return {success: true}
+        response = send_request('/people.json', params, {status: 'ALL'})
+
+        # get the person's id from the header response
+        id = response.header_str.split("\r\n").select do |h|
+          h.start_with?('id: ')
+        end.first.gsub(/\D/, '')
+
+        response = JSON.load(response.body_str)
+
+        if response['STATUS'] == 'OK'
+          add_to_projects(id)
+
+          {
+            success: true,
+            response: response,
+          }
         else
-          return {success: false, erorr: response}
+          {
+            success: false,
+            erorr: response,
+          }
+        end
+      end
+
+      def add_to_projects(id)
+        get('/projects.json')['projects'].each do |p|
+          Thread.new do
+            send_request("/projects/#{p['id']}/people/#{id}.json")
+          end
         end
       end
 
@@ -55,10 +80,10 @@ module Firebots
         ).to_s
       end
 
-      def send_request(endpoint, params)
+      def get(endpoint)
         url = api_url(endpoint)
 
-        http = Curl.post(url, params.to_json.to_s) do |c|
+        http = Curl.get(url) do |c|
           c.headers['Accept'] = 'application/json'
           c.headers['Content-Type'] = 'application/json'
 
@@ -68,6 +93,21 @@ module Firebots
         end
 
         JSON.load(http.body_str)
+      end
+
+      def send_request(endpoint, params={}, url_options={})
+        url = api_url(endpoint, url_options)
+
+        http = Curl.post(url, params.to_json) do |c|
+          c.headers['Accept'] = 'application/json'
+          c.headers['Content-Type'] = 'application/json'
+
+          c.http_auth_types = :basic
+          c.username = Konfiguration.creds(:teamwork, :username)
+          c.password = 'none'
+        end
+
+        http
       end
 
     end
