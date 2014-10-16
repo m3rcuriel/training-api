@@ -47,7 +47,9 @@ module Firebots::InternalAPI::Controllers
 
       Firebots::Password.new(user).save_password!(password)
 
-      Firebots::Teamwork.new_user(user)
+      Thread.new do
+        Firebots::Teamwork.new_user(user)
+      end
 
       all_badges = Models::Badges.all
       all_badges.each do |badge|

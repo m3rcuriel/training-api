@@ -34,28 +34,25 @@ module Firebots
           },
         }
 
-        response = send_request('/people.json', params, {status: 'ALL'})
+        res = send_request('/people.json', params, {status: 'ALL'})
+        response = JSON.load(res.body_str)
+
+        return {
+          success: false,
+          error: response,
+        } unless response['STATUS'] == 'OK'
 
         # get the person's id from the header response
-        id = response.header_str.split("\r\n").select do |h|
+        id = res.header_str.split("\r\n").select do |h|
           h.start_with?('id: ')
         end.first.gsub(/\D/, '')
 
-        response = JSON.load(response.body_str)
+        add_to_projects(id)
 
-        if response['STATUS'] == 'OK'
-          add_to_projects(id)
-
-          {
-            success: true,
-            response: response,
-          }
-        else
-          {
-            success: false,
-            erorr: response,
-          }
-        end
+        {
+          success: true,
+          response: response,
+        }
       end
 
       def add_to_projects(id)
