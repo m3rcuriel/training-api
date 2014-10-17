@@ -11,8 +11,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 cat .ssh/id_rsa.pub # copy the output, paste into gitlabs under settings -> deploy key
 
-sudo yum install git postgresql-devel postfix nginx libcurl-devel.x86_64
-sudo postfix start
+sudo yum install git postgresql-devel nginx libcurl-devel.x86_64
 
 git clone git@gitlab.com:loganh/training-api.git
 cd training-api

@@ -16,8 +16,6 @@ GEM
       json
       rack (~> 1.5.2)
     konfiguration (1.0)
-    mail (2.6.1)
-      mime-types (>= 1.16, < 3)
     mailgun-ruby (1.0.2)
       json (~> 1.8)
       rest-client (~> 1.6)
@@ -66,7 +64,6 @@ DEPENDENCIES
   fortune_gem (~> 0.0.8)
   kenji (~> 1.1.2)
   konfiguration (~> 1.0)
-  mail (~> 2.6.1)
   mailgun-ruby (~> 1.0.2)
   pg (~> 0.17.1)
   pry (~> 0.9.12.6)
