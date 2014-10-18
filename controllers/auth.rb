@@ -88,7 +88,7 @@ module Firebots::InternalAPI::Controllers
         allow_keys :valid
       end
 
-      user = Models::Users[email: input['email']]
+      user = Models::Users[email: input['email'].downcase]
       kenji.respond(404, 'No such user.') unless user
 
       send_reset_email(user)

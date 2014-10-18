@@ -31,6 +31,7 @@ module Firebots::InternalAPI::Controllers
 
         allow_keys :valid
       end
+      input['email'] = input['email'].downcase
 
       password = Password.pronounceable
       input[:id] = Rubyflake.generate
