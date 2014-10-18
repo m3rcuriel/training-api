@@ -51,6 +51,7 @@ module Firebots::InternalAPI::Controllers
         validates_type_of 'ttl', is: Integer, when: :is_set
         allow_keys :valid
       end
+      input['email'] = input['email'].downcase
 
       user = Models::Users[email: input['email']]
       unless user && Firebots::Password.new(user).verify(input['password'])
