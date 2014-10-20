@@ -133,8 +133,10 @@ module Firebots::InternalAPI::Controllers
           'technical_group', 'nontechnical_group', 'title', 'bio',
           is: String, when: :is_set
 
-        validates_regex 'email', matches: /^.+@.+\..+$/, when: :is_set
+        validates 'bio', with: -> { self.length <= 255 },
+          reason: 'must be less ≤ 255 characters.', when: :is_set
 
+        validates_regex 'email', matches: /^.+@.+\..+$/, when: :is_set
         validates 'email',
           with: -> { Models::Users[email: self].nil? || user[:email] == self },
           reason: 'must be unique.', when: :is_set
