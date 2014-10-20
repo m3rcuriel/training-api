@@ -151,7 +151,8 @@ module Firebots::InternalAPI::Controllers
           with: -> { self && Firebots::Password.new(user).verify(self) },
           reason: 'is invalid.'
       end
-      input['email'] = input['email'].downcase
+      # if email exists, make it downcase
+      input['email'] &&= input['email'].downcase
 
       # don't allow this
       input.delete('title')
