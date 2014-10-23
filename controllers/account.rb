@@ -172,6 +172,7 @@ module Firebots::InternalAPI::Controllers
 
       {
         status: 200,
+        message: 'New settings saved.',
         user: sanitized_user(new_user),
       }
     end
