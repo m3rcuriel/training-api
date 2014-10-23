@@ -26,6 +26,7 @@ gem 'pg', '~>0.17.1'
 # dev
 group :development do
   gem 'pry', '~>0.9.12.6'
+  gem 'did_you_mean', '~>0.7.0'
 end
 
 source 'https://rubygems.org'
