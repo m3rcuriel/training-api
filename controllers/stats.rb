@@ -34,13 +34,7 @@ module Firebots
             }
         end
 
-        result = {
-          status: 200,
-          result: result,
-        }
-
-        Cache.set('names-badges', result, 1800)
-        result
+        ensure_cached('names-badges', result)
       end
 
       # Returns names and the number of badges they have per category.
@@ -65,13 +59,7 @@ module Firebots
             }
         end
 
-        result = {
-          status: 200,
-          result: result,
-        }
-
-        Cache.set('names-categories', result, 1800)
-        result
+        ensure_cached('names-categories', result)
       end
 
       # Returns names and the level they are in each category.
@@ -97,17 +85,21 @@ module Firebots
             }
         end
 
+        ensure_cached('names-levels', result)
+      end
+
+
+      private
+
+      def ensure_cached(key, result)
         result = {
           status: 200,
           result: result,
         }
 
-        Cache.set('names-levels', result, 1800)
+        Cache.set(key, result, 1800)
         result
       end
-
-
-      private
 
       def get_categories
         cached = Cache.get('categories')
