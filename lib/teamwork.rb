@@ -34,8 +34,7 @@ module Firebots
           },
         }
 
-        res = send_request('/people.json', params, {status: 'ALL'})
-        response = JSON.load(res.body_str)
+        response = send_request('/people.json', params, {status: 'ALL'})
 
         return {
           success: false,
@@ -68,6 +67,14 @@ module Firebots
 
       API_PROTOCOL = :HTTPS
       API_HOST = 'fremonthighroboticsteam.teamwork.com'
+      AUTH = lambda do |curl|
+        curl.headers['Accept'] = 'application/json'
+        curl.headers['Content-Type'] = 'application/json'
+
+        curl.http_auth_types = :basic
+        curl.username = Konfiguration.creds(:teamwork, :username)
+        curl.password = 'none'
+      end
 
       def api_url(endpoint, params={})
         URI.const_get(API_PROTOCOL).build(
@@ -80,31 +87,15 @@ module Firebots
       def get(endpoint)
         url = api_url(endpoint)
 
-        http = Curl.get(url) do |c|
-          c.headers['Accept'] = 'application/json'
-          c.headers['Content-Type'] = 'application/json'
-
-          c.http_auth_types = :basic
-          c.username = Konfiguration.creds(:teamwork, :username)
-          c.password = 'none'
-        end
-
+        http = Curl.get(url, AUTH)
         JSON.load(http.body_str)
       end
 
       def send_request(endpoint, params={}, url_options={})
         url = api_url(endpoint, url_options)
 
-        http = Curl.post(url, params.to_json) do |c|
-          c.headers['Accept'] = 'application/json'
-          c.headers['Content-Type'] = 'application/json'
-
-          c.http_auth_types = :basic
-          c.username = Konfiguration.creds(:teamwork, :username)
-          c.password = 'none'
-        end
-
-        http
+        http = Curl.post(url, params.to_json, AUTH)
+        JSON.load(http.body_str)
       end
 
     end
