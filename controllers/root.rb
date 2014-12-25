@@ -11,6 +11,7 @@ module Firebots::InternalAPI::Controllers
     pass '/account', Account
     pass '/badges', Badges
     pass '/public', Public
+    pass '/stats', Stats
 
   end
 end
