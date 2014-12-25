@@ -170,7 +170,7 @@ module Firebots
       end
 
       get '/levels/:username' do |username|
-        # requires_authentication!
+        requires_authentication!
         user = Models::Users[username: username]
 
         all_levels = get_all_levels(user)
