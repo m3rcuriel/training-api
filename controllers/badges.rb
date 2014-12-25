@@ -161,6 +161,8 @@ module Firebots
           Hash[category, get_level(all_levels[category])]
         end.reduce({}, :merge)
 
+        all_levels[:Outreach] = get_outreach_level(user)
+
         {
           status: 200,
           levels: all_levels,
@@ -168,7 +170,7 @@ module Firebots
       end
 
       get '/levels/:username' do |username|
-        user = requires_authentication!
+        # requires_authentication!
         user = Models::Users[username: username]
 
         all_levels = get_all_levels(user)
@@ -176,6 +178,8 @@ module Firebots
         all_levels = get_categories.map do |category|
           Hash[category, get_level(all_levels[category])]
         end.reduce({}, :merge)
+
+        all_levels[:Outreach] = get_outreach_level(user)
 
         {
           status: 200,
@@ -258,6 +262,14 @@ module Firebots
             total: badges.count,
             earned: earned_badges,
         }]
+      end
+
+      def get_outreach_level(user)
+        total_earned = get_category_levels(user, 'Outreach')
+          .map { |_, v| v[:earned] }
+          .reduce(:+)
+
+        total_earned / 3
       end
 
       def sanitized_badge(badge)
