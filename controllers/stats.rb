@@ -91,7 +91,7 @@ module Firebots
           result: result,
         }
 
-        Cache.set(key, result, 1800)
+        Cache.set(key, result, 24 * 3600)
         result
       end
 

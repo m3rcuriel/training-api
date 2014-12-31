@@ -12,6 +12,6 @@ ps ax | fgrep thin | awk '{print $1}' | tr '\n' ' ' | xargs kill -2
 sleep 1
 ps ax | fgrep thin | awk '{print $1}' | tr '\n' ' ' | xargs kill -9
 
-thin -R config.ru -p 7000 -s 3 start
+thin -R config.ru -p 7000 -s 2 start
 
 echo 'Done restarting.'
