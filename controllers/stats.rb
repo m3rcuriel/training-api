@@ -8,8 +8,6 @@ module Firebots
       # Returns names and their status in relation to every badge.
       #
       get '/names-badges' do
-        requires_authentication!
-
         cached = Cache.get('names-badges')
         return cached if cached
 
@@ -40,8 +38,6 @@ module Firebots
       # Returns names and the number of badges they have per category.
       #
       get '/names-categories' do
-        requires_authentication!
-
         cached = Cache.get('names-categories')
         return cached if cached
 
@@ -65,8 +61,6 @@ module Firebots
       # Returns names and the level they are in each category.
       #
       get '/names-levels' do
-        requires_authentication!
-
         cached = Cache.get('names-levels')
         return cached if cached
 
