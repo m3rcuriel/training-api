@@ -20,7 +20,7 @@ module Firebots
 
             # get the status of all badge relations
             badges = Models::Badges.map do |badge|
-              relation = Models::UserBadges[badge_id: badge[:id]]
+              relation = Models::UserBadges[badge_id: badge[:id], user_id: user[:id]]
 
               {
                 id: badge[:id],
