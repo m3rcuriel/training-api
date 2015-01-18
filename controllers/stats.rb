@@ -108,7 +108,7 @@ module Firebots
       end
 
       def get_level(levels_hash)
-        (1..4).each do |level|
+        (1..5).each do |level|
           level_hash = levels_hash[level]
 
           unless level_hash[:total] != 0 && level_hash[:earned] == level_hash[:total]
@@ -116,12 +116,12 @@ module Firebots
           end
         end
 
-        4
+        5
       end
 
       def get_all_levels(user)
         get_categories.map do |category|
-          counts = (1..4).map do |level|
+          counts = (1..5).map do |level|
             count_earned_badges(user, category, level)
           end.reduce({}, :merge)
 
@@ -130,7 +130,7 @@ module Firebots
       end
 
       def get_category_levels(user, category)
-        (1..4).map do |level|
+        (1..5).map do |level|
           count_earned_badges(user, category, level)
         end.reduce({}, :merge)
       end
