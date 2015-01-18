@@ -66,6 +66,7 @@ module Firebots
 
         result = Models::Users
           .where(permissions: ['student', 'lead'])
+          .order(:technical_group)
           .map do |user|
             user_levels = get_all_levels(user)
 
