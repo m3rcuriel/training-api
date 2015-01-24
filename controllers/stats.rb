@@ -120,13 +120,16 @@ module Firebots
       end
 
       def get_all_levels(user)
-        get_categories.map do |category|
+        ret = get_categories.map do |category|
           counts = (1..5).map do |level|
             count_earned_badges(user, category, level)
           end.reduce({}, :merge)
 
           Hash[category, counts]
         end.reduce({}, :merge)
+
+        ret[:Outreach] = get_outreach_level(user)
+        ret
       end
 
       def get_category_levels(user, category)
@@ -151,6 +154,14 @@ module Firebots
             total: badges.count,
             earned: earned_badges,
         }]
+      end
+
+      def get_outreach_level(user)
+        total_earned = get_category_levels(user, 'Outreach')
+          .map { |_, v| v[:earned] }
+          .reduce(:+)
+
+        total_earned / 3
       end
     end
   end
