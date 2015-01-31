@@ -128,7 +128,7 @@ module Firebots
       get '/badge/:id' do |id|
         user = requires_authentication!
 
-        all_user_ids = Models::Users.select_map(:id)
+        all_user_ids = Models::Users.where(archived: false).select_map(:id)
 
         users_badges_hash = all_user_ids.map do |user_id|
           relation = Models::UserBadges[badge_id: id, user_id: user_id, status: 'yes']
@@ -156,7 +156,7 @@ module Firebots
       private
 
       def all_user_badges(status)
-        all_users = Models::Users.all
+        all_users = Models::Users.where(archived: false).all
 
         users_badges_hash = all_users.map do |user|
           badge_relations = Models::UserBadges

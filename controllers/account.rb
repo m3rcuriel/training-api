@@ -52,8 +52,7 @@ module Firebots::InternalAPI::Controllers
         Firebots::Teamwork.new_user(user)
       end
 
-      all_badges = Models::Badges.all
-      all_badges.each do |badge|
+      Models::Badges.each do |badge|
         Models::UserBadges.insert({
           user_id: user[:id],
           badge_id: badge[:id],
@@ -112,7 +111,7 @@ module Firebots::InternalAPI::Controllers
     get '/all' do
       user = requires_authentication!
 
-      all = Models::Users.all
+      all = Models::Users.where(archived: false).all
 
       {
         status: 200,
