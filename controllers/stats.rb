@@ -13,6 +13,7 @@ module Firebots
 
         # get the data for all students
         result = Models::Users
+          .where(archived: false)
           .where(permissions: ['student', 'lead'])
           .map do |user|
 
@@ -42,6 +43,7 @@ module Firebots
         return cached if cached
 
         result = Models::Users
+          .where(archived: false)
           .where(permissions: ['student', 'lead'])
           .map do |user|
 
@@ -65,6 +67,7 @@ module Firebots
         return cached if cached
 
         result = Models::Users
+          .where(archived: false)
           .where(permissions: ['student', 'lead'])
           .order(:technical_group)
           .map do |user|
