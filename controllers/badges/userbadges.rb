@@ -30,12 +30,14 @@ module Firebots
         badge_id = input['badge_id']
         user_id = input['user_id']
 
-        Models::UserBadges.where(badge_id: badge_id, user_id: user_id).update(
-          input.merge(
-            time_updated: Time.now,
-            reviewer_id: user[:id],
+        Models::UserBadges
+          .where(badge_id: badge_id, user_id: user_id)
+          .update(
+            input.merge(
+              time_updated: Time.now,
+              reviewer_id: user[:id],
+            )
           )
-        )
 
         if input['status'] == 'no'
           message = 'User unlinked from badge.'
@@ -52,9 +54,9 @@ module Firebots
       # Lists the user's badges.
       #
       get '/' do
-        user = requires_authentication!
-
-        badge_relations = Models::UserBadges.where(user_id: user[:id]).all
+        badge_relations = Models::UserBadges
+          .where(user_id: user[:id])
+          .all
 
         {
           status: 200,
@@ -65,10 +67,10 @@ module Firebots
       # Lists an arbitrary users's badges.
       #
       get '/:username' do |username|
-        user = requires_authentication!
-
         user_id = Models::Users[username: username][:id]
-        badge_relations = Models::UserBadges.where(user_id: user_id).all
+        badge_relations = Models::UserBadges
+          .where(user_id: user_id)
+          .all
 
         {
           status: 200,
@@ -79,8 +81,6 @@ module Firebots
       # Lists how many badges from each category a user has.
       #
       get '/:username/category-count' do |username|
-        user = requires_authentication!
-
         {
           status: 200,
           category_counts: count_categories(username)
@@ -90,8 +90,6 @@ module Firebots
       # Lists how many badges from each category the current user has.
       #
       get '/category-count' do
-        user = requires_authentication!
-
         {
           status: 200,
           category_counts: count_categories(user[:username]),
@@ -101,8 +99,6 @@ module Firebots
       # Lists every badge that every user has with the given status
       #
       get '/all' do
-        user = requires_authentication!
-
         input = kenji.validated_input do
           validates_type_of 'status', is: String, when: :is_set
         end
@@ -126,9 +122,9 @@ module Firebots
       # Lists all users that have a given badge.
       #
       get '/badge/:id' do |id|
-        user = requires_authentication!
-
-        all_user_ids = Models::Users.where(archived: false).select_map(:id)
+        all_user_ids = Models::Users
+          .where(archived: false)
+          .select_map(:id)
 
         users_badges_hash = all_user_ids.map do |user_id|
           relation = Models::UserBadges[badge_id: id, user_id: user_id, status: 'yes']
@@ -137,21 +133,23 @@ module Firebots
           Hash[user[:username], relation]
         end.reduce({}, :merge)
 
-        users_badges_hash = users_badges_hash.reject{ |k, v| v.nil? }
-        users_badges_hash.each do |k, v|
-          user = Models::Users[username: k]
-          users_badges_hash[k].update(
-            username: user[:username],
-            email: user[:email],
-            first_name: user[:first_name]
-          )
-        end
+        users_badges_hash
+          .reject { |k, v| v.nil? }
+          .each do |k, v|
+            user = Models::Users[username: k]
+            users_badges_hash[k].update(
+              username: user[:username],
+              email: user[:email],
+              first_name: user[:first_name]
+            )
+          end
 
         {
           status: 200,
           relations: users_badges_hash.reject{ |k, v| v.nil? },
         }
       end
+
 
       private
 
@@ -191,8 +189,7 @@ module Firebots
             badges: badges,
             user: {first_name: user[:first_name], last_name: user[:last_name]},
           }]
-        end
-        .reduce({}, :merge)
+        end.reduce({}, :merge)
         .delete_if {|k, v| v[:badges].empty?}
       end
 
