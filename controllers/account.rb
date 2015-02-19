@@ -72,8 +72,6 @@ module Firebots::InternalAPI::Controllers
     # Returns information about a user.
     #
     get '/:username' do |username|
-      user = requires_authentication!
-
       user = Models::Users[username: username]
 
       {
@@ -85,8 +83,6 @@ module Firebots::InternalAPI::Controllers
     # Returns information about a user by id.
     #
     get '/id/:id' do |id|
-      user = requires_authentication!
-
       user = Models::Users[id: id]
 
       {
