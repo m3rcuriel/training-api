@@ -1,6 +1,6 @@
 # Get started
 
-Follow [these instructions](https://gitlab.com/fremont-robotics-software-team/general/blob/master/tutorials/setup/training-api.md).
+Follow the instructions in `setup.md`.
 
 Whenever you create a new migration, use: `touch migrations/$(date +%s)_name_of_migration.rb`.
 
