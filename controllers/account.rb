@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'simple-password-gen'
 require 'lib/email'
 require 'lib/teamwork'
@@ -105,7 +106,7 @@ module Firebots::InternalAPI::Controllers
     # Returns a list of all users.
     #
     get '/all' do
-      user = requires_authentication!
+      requires_authentication!
 
       all = Models::Users.where(archived: false).all
 

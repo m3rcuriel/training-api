@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require 'aws-sdk'
 require 'fortune_gem'
 require 'lib/email'
@@ -7,6 +9,8 @@ module Firebots
   module InternalAPI::Controllers
 
     class Badges < Kenji::Controller
+
+      pass '/user', UserBadges
 
       # Returns a specified badge.
       #
@@ -201,8 +205,6 @@ module Firebots
         }
       end
 
-      pass '/user', UserBadges
-
       # -- Helper methods
       private
 
@@ -283,7 +285,7 @@ module Firebots
         Firebots::Email.send(
           from: 'admin@mg.fremontrobotics.com',
           to: 'Sohini Stone <sohiniss@gmail.com>',
-          cc: ['Sitar Harel <sitar@sitarharel.com>', 'Logan Howard <logan@oflogan.com>'],
+          cc: ['Logan Howard <logan@oflogan.com>'],
           subject: 'New badge – 3501',
           text: <<-EOM
             Hi Sohini,
