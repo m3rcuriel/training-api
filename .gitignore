@@ -3,3 +3,4 @@ db
 .bundle
 aws/*.pem
 config/shared/creds.yml
+config/dev/database.yml
