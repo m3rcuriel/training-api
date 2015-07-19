@@ -5,12 +5,14 @@ require 'fortune_gem'
 require 'lib/email'
 require 'lib/cache'
 
+require 'controllers/badges/userbadges'
+
 module Firebots
   module InternalAPI::Controllers
 
     class Badges < Kenji::Controller
 
-      pass '/user', UserBadges
+      pass '/user', ::Firebot::InternalAPI::Controllers::UserBadges
 
       # Returns a specified badge.
       #
