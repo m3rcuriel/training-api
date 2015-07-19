@@ -12,7 +12,7 @@ module Firebots
 
     class Badges < Kenji::Controller
 
-      pass '/user', ::Firebot::InternalAPI::Controllers::UserBadges
+      pass '/user', ::Firebots::InternalAPI::Controllers::UserBadges
 
       # Returns a specified badge.
       #
