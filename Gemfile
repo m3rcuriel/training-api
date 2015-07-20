@@ -19,6 +19,7 @@ gem 'fortune_gem', '~>0.0.8'
 gem 'simple-password-gen', '~>0.1.5'
 gem 'curb', '~>0.8.6'
 gem 'mailgun-ruby', '~>1.0.2'
+gem 'octokit', '~>4.0.1'
 
 # production
 gem 'pg', '~>0.17.1'

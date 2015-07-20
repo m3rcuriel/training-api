@@ -1,7 +1,6 @@
 # coding: utf-8
 require 'simple-password-gen'
 require 'lib/email'
-require 'lib/teamwork'
 
 module Firebots::InternalAPI::Controllers
 
@@ -48,10 +47,6 @@ module Firebots::InternalAPI::Controllers
       user = Models::Users[id: input[:id]]
 
       Firebots::Password.new(user).save_password!(password)
-
-      Thread.new do
-        Firebots::Teamwork.new_user(user)
-      end
 
       Models::Badges.each do |badge|
         Models::UserBadges.insert({
