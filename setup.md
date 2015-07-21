@@ -45,7 +45,7 @@ Type `cat ~/.ssh/id_rsa.pub` and paste the output of that command into the "key"
 I recommend making a folder under your home directory called "robotics" and cloning this project within the robotics folder. Better to keep all the robotics stuff in one place.
 ```bash
 # if you don't have access, contact Logan
-git clone git@gitlab.com:loganh/training-api.git
+git clone git@github.com:glinia/training-api.git
 cd training-api
 ```
 
