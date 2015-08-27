@@ -38,7 +38,7 @@ module Firebots
           validates_type_of 'name', 'description', 'category', 'subcategory',
             'learning_method', 'resources', is: String
           validates_type_of 'assessment', 'verifiers', is: String, when: :is_set
-          validates_type_of 'level', is: Integer, when: :is_set
+          validates_type_of 'year', is: Integer, when: :is_set
         end
 
         input[:id] = Rubyflake.generate
@@ -74,7 +74,7 @@ module Firebots
       get '/all' do
         unless badges = Cache.get('all-badges')
           Cache.set('all-badges',
-            result = Models::Badges.order(:category, :level, :subcategory).all,
+            result = Models::Badges.order(:year, :category, :subcategory).all,
             60)
         end
 
@@ -98,7 +98,7 @@ module Firebots
           validates_type_of 'name', 'description', 'category', 'subcategory',
             'learning_method', 'assessment', 'resources', 'verifiers',
             is: String, when: :is_set
-          validates_type_of 'level', is: Integer, when: :is_set
+          validates_type_of 'year', is: Integer, when: :is_set
         end
 
         badge = Models::Badges[id: id.to_i]
@@ -134,64 +134,6 @@ module Firebots
         }
       end
 
-      get '/level/:username/:category' do |category|
-        user = requires_authentication!
-        user = Models::Users[username: username]
-
-        level_hash = get_category_levels(user, category)
-
-        {
-          status: 200,
-          levels: get_level(level_hash),
-        }
-      end
-
-      get '/level/:category' do |category|
-        user = requires_authentication!
-
-        level_hash = get_category_levels(user, category)
-
-        {
-          status: 200,
-          level: get_level(level_hash),
-        }
-      end
-
-      get '/levels' do
-        user = requires_authentication!
-
-        all_levels = get_all_levels(user)
-
-        all_levels = get_categories.map do |category|
-          Hash[category, get_level(all_levels[category])]
-        end.reduce({}, :merge)
-
-        all_levels[:Outreach] = get_outreach_level(user)
-
-        {
-          status: 200,
-          levels: all_levels,
-        }
-      end
-
-      get '/levels/:username' do |username|
-        requires_authentication!
-        user = Models::Users[username: username]
-
-        all_levels = get_all_levels(user)
-
-        all_levels = get_categories.map do |category|
-          Hash[category, get_level(all_levels[category])]
-        end.reduce({}, :merge)
-
-        all_levels[:Outreach] = get_outreach_level(user)
-
-        {
-          status: 200,
-          levels: all_levels,
-        }
-      end
-
       delete '/:id' do |id|
         user = requires_authentication!
         unless user[:permissions] == 'mentor'
@@ -221,64 +163,10 @@ module Firebots
         categories
       end
 
-      def get_level(levels_hash)
-        (1..5).each do |level|
-          level_hash = levels_hash[level]
-
-          unless level_hash[:total] != 0 && level_hash[:earned] == level_hash[:total]
-            return level - 1
-          end
-        end
-
-        5
-      end
-
-      def get_all_levels(user)
-        get_categories.map do |category|
-          counts = (1..5).map do |level|
-            count_earned_badges(user, category, level)
-          end.reduce({}, :merge)
-
-          Hash[category, counts]
-        end.reduce({}, :merge)
-      end
-
-      def get_category_levels(user, category)
-        (1..5).map do |level|
-          count_earned_badges(user, category, level)
-        end.reduce({}, :merge)
-      end
-
-      def count_earned_badges(user, category, level)
-        badges = Models::Badges.where(category: category, level: level).all
-
-        earned_badges = 0
-        badges.each do |badge|
-          earned_badges += 1 if Models::UserBadges[
-            badge_id: badge[:id],
-            user_id: user[:id],
-            status: 'yes',
-          ]
-        end
-
-        Hash[level, {
-            total: badges.count,
-            earned: earned_badges,
-        }]
-      end
-
-      def get_outreach_level(user)
-        total_earned = get_category_levels(user, 'Outreach')
-          .map { |_, v| v[:earned] }
-          .reduce(:+)
-
-        total_earned / 3
-      end
-
       def sanitized_badge(badge)
         Hash[badge.select do |k,_|
           [:id, :time_created, :time_updated, :name, :description,
-            :learning_method, :assessment, :category, :subcategory, :level,
+            :learning_method, :assessment, :category, :subcategory, :year,
             :resources, :verifiers].include?(k)
         end.map(&Helpers::HashPairSanitizer)]
       end

@@ -31,12 +31,12 @@ DB.transaction do
     time_created: test_user[:time_created] + 4.min + 1,
     time_updated: test_user[:time_created] + 4.min + 1,
     name: 'Mello',
-    description: 'Can make basic changes to controllers. Able to submit pull requests for this, and respond to reviews in a timely manner. Has obtained Software Environments level 3.',
+    description: 'Can make basic changes to controllers. Able to submit pull requests for this, and respond to reviews in a timely manner. Has obtained Software Environments 3.',
     learning_method: 'Logan will be available for questions, will assign tasks of increasing difficulty to those interested, and will review code.',
     assessment: 'Performance task & mentor interview',
     category: 'Software',
     subcategory: 'Kenji',
-    level: 1,
+    year: 2015,
   }
   Models::Badges.insert(badge_1)
 
@@ -50,7 +50,7 @@ DB.transaction do
     assessment: 'Performance task & mentor interview',
     category: 'Software',
     subcategory: 'Kenji',
-    level: 2,
+    year: 2015,
   }
   Models::Badges.insert(badge_2)
 
@@ -64,7 +64,7 @@ DB.transaction do
     assessment: 'Performance task & mentor interview?',
     category: 'Software',
     subcategory: 'Kenji',
-    level: 3,
+    year: 2015,
   }
   Models::Badges.insert(badge_3)
 
@@ -78,7 +78,7 @@ DB.transaction do
     assessment: 'Performance task & mentor interview',
     category: 'Software',
     subcategory: 'Kenji',
-    level: 4,
+    year: 2015,
   }
   Models::Badges.insert(badge_4)
 

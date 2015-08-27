@@ -43,28 +43,6 @@ module Firebots
           message: message.force_encoding('UTF-8')
         }
       end
-
-      get '/blog/:id' do |id|
-        requires_authentication!
-
-        post = Cache.get("blog/#{id}")
-        unless post
-          begin
-            post = Github.as_raw(repo:     'build-blog',
-                                 path:     'posts',
-                                 filename: "#{id}.md")
-          rescue StandardError => e
-            kenji.respond(404, e.message)
-          end
-
-          Cache.set("blog/#{id}", post, 60)
-        end
-
-        {
-          status: 200,
-          post:   post.force_encoding('UTF-8')
-        }
-      end
     end
   end
 end
