@@ -74,15 +74,18 @@ module Firebots
       get '/all' do
         unless badges = Cache.get('all-badges')
           Cache.set('all-badges',
-            result = Models::Badges.order(:year, :category, :subcategory).all,
-            60)
+                    result = Models::Badges.where(is_deleted: false)
+                                           .order(:year,
+                                                  :category,
+                                                  :subcategory).all,
+                    20)
         end
 
         badges ||= result
 
         {
           status: 200,
-          all: badges.map {|b| sanitized_badge(b) },
+          all:    badges.map { |b| sanitized_badge(b) }
         }
       end
 
@@ -136,12 +139,12 @@ module Firebots
 
       delete '/:id' do |id|
         user = requires_authentication!
-        unless user[:permissions] == 'mentor'
+        unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
           kenji.respond(403, 'You are not allowed to delete badges.')
         end
 
-        Models::UserBadges.where(badge_id: id).delete
-        Models::Badges.where(id: id).delete
+        Models::Badges.where(id: id).update(is_deleted:   true,
+                                            time_updated: Time.now)
 
         {
           status: 200,
