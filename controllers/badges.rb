@@ -137,7 +137,7 @@ module Firebots
         }
       end
 
-      delete '/:id' do |id|
+      post '/:id' do |id|
         user = requires_authentication!
         unless user[:permissions] == 'mentor' || user[:permissions] == 'lead'
           kenji.respond(403, 'You are not allowed to delete badges.')
