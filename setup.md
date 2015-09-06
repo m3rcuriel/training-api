@@ -31,7 +31,8 @@ This will install `rvm`, which stands for "ruby version manager".
 
 Next, install the Ruby version that we use and create a gemset for robotics:
 ```bash
-rvm install ruby --latest
+rvm install ruby 2.1.3
+rvm use --default 2.1.3 # remove --default if you don't want it to be default
 rvm gemset create firebots
 rvm gemset use firebots
 ```
