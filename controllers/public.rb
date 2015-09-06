@@ -1,8 +1,6 @@
 require 'curl'
 require 'lib/cache'
 
-require 'lib/github-client'
-
 module Firebots
   module InternalAPI::Controllers
 
