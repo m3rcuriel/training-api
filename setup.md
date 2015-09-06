@@ -37,6 +37,8 @@ rvm gemset create firebots
 rvm gemset use firebots
 ```
 
+###### Important Note: Ruby 2.1.3 is the only version of Ruby that works with this project.
+
 ## Clone the project
 
 If you don't already have one, follow [these instructions](https://help.github.com/articles/generating-ssh-keys/) to generate an ssh key.
