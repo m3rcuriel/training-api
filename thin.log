@@ -1,0 +1,1884 @@
+Thin web server (v1.6.3 codename Protein Powder)
+Maximum connections set to 1024
+Listening on 0.0.0.0:9977, CTRL+C to stop
+     * * *
+
+[0;36;49mRequest: GET /public/message[0m
+[0;32;49mResponse: 200 (163ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /account/all[0m
+[0;32;49mResponse: 200 (21ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /public/message[0m
+[0;32;49mResponse: 200 (1ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /public/message[0m
+[0;32;49mResponse: 200 (1ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:25am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (11ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:26am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:27am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (6ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:28am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:29am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:30am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:31am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:32am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (6ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:33am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (7ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:34am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (4ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;31;49mResponse: 403 (1ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /account/id/1239388800245173826[0m
+[0;32;49mResponse: 200 (2ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /public/message[0m
+[0;32;49mResponse: 200 (199ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/all[0m
+[0;32;49mResponse: 200 (5ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/categories[0m
+[0;32;49mResponse: 200 (1ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m
+     * * *
+
+[0;36;49mRequest: GET /badges/user[0m
+[0;32;49mResponse: 200 (3ms) [0m
+[0;36;49mFrom: MVRTDevelopment[0m
+At: Sep 7 2015, 7:35am
+
+[0;32;49mNo stdout.[0m
+[0;33;49mNo stderr.[0m

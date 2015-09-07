@@ -149,7 +149,7 @@ module Firebots::InternalAPI::Controllers
 
     def generate_link(endpoint, params)
       URI.const_get(:HTTPS).build(
-        host: 'app.fremontrobotics.com',
+        host: 'api.mvrt.com',
         path: endpoint,
         query: !params.empty? ? URI.encode_www_form(params) : nil
       ).to_s

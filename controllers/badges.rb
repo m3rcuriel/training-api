@@ -184,7 +184,7 @@ module Firebots
             Hi Sohini,
 
             #{user[:first_name]} (#{user[:title]}) has created a new #{badge[:category]} badge.
-            Link: https://app.fremontrobotics.com/badge/#{badge[:id]}
+            Link: https://trainings.mvrt.com/badge/#{badge[:id]}
 
             Name: #{badge[:name]}
             Subcategory: #{badge[:subcategory]}
