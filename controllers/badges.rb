@@ -176,12 +176,12 @@ module Firebots
 
       def send_new_badge_email(badge, user)
         Firebots::Email.send(
-          from: 'admin@mg.fremontrobotics.com',
-          to: 'Sohini Stone <sohiniss@gmail.com>',
-          cc: ['Logan Howard <logan@oflogan.com>'],
-          subject: 'New badge – 3501',
+          from: 'admin@trainings.mvrt.com',
+          to: 'Lee Mracek <lee.mracek@gmail.com>',
+          cc: ['Akhil Palla <akhil@theakhil.com>'],
+          subject: 'New badge – 115',
           text: <<-EOM
-            Hi Sohini,
+            Hi Lee,
 
             #{user[:first_name]} (#{user[:title]}) has created a new #{badge[:category]} badge.
             Link: https://trainings.mvrt.com/badge/#{badge[:id]}

@@ -5,7 +5,7 @@ module Firebots
 
     def self.send(params)
       Thread.new do
-        client.send_message('mg.fremontrobotics.com', params)
+        client.send_message('trainings.mvrt.com', params)
       end
     end
 

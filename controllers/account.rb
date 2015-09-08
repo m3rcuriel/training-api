@@ -182,13 +182,13 @@ module Firebots::InternalAPI::Controllers
 
     def send_invite_email(first_name, email, password, inviter_first_name)
       Firebots::Email.send(
-        from: 'admin@mg.fremontrobotics.com',
+        from: 'admin@trainings.mvrt.com',
         to: email,
-        subject: '3501 FRC Training',
+        subject: '115 FRC Training',
         text: <<-EOM
           Hello #{first_name},
 
-          #{inviter_first_name} has added you to the FRC 3501 training site: https://trainings.mvrt.com/about.
+          #{inviter_first_name} has added you to the FRC 115 training site: https://trainings.mvrt.com/about.
 
           Your temporary password is `#{password}`. You should change it immediately.
 

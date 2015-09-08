@@ -128,9 +128,9 @@ module Firebots::InternalAPI::Controllers
       link = generate_link('/forgot-password/reset', {token: CGI.escape(token)})
 
       Firebots::Email.send(
-        from: 'admin@mg.fremontrobotics.com',
+        from: 'admin@training.mvrt.com',
         to: user[:email],
-        subject: '3501 Firebots – Password Reset',
+        subject: '115 MVRT – Password Reset',
         text: <<-EOM
           Hi #{user[:first_name]},
 
@@ -142,14 +142,14 @@ module Firebots::InternalAPI::Controllers
           #{link}
 
 
-          The Firebots Team
+          The Officer Team
         EOM
       )
     end
 
     def generate_link(endpoint, params)
       URI.const_get(:HTTPS).build(
-        host: 'api.mvrt.com',
+        host: 'trainings.mvrt.com',
         path: endpoint,
         query: !params.empty? ? URI.encode_www_form(params) : nil
       ).to_s
